@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="阮一峰博客 12345678910111213141516定义 testconst request = require(&apos;supertest&apos;)const &amp;#123; createToken &amp;#125; = require(&apos;../lib/jwt&apos;) //请求">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/11/27/mocha test/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="阮一峰博客 12345678910111213141516定义 testconst request = require(&apos;supertest&apos;)const &amp;#123; createToken &amp;#125; = require(&apos;../lib/jwt&apos;) //请求 tokenconst &amp;#123; expect &amp;#125; = require(&apos;chai&apos;)      const server">
 <meta property="og:locale" content="cn">
+<meta property="og:updated_time" content="2017-11-27T04:24:25.009Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="阮一峰博客 12345678910111213141516定义 testconst request = require(&apos;supertest&apos;)const &amp;#123; createToken &amp;#125; = require(&apos;../lib/jwt&apos;) //请求 tokenconst &amp;#123; expect &amp;#125; = require(&apos;chai&apos;)      const server">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -154,245 +158,160 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-mocha test" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://www.ruanyifeng.com/blog/2015/12/a-mocha-tutorial-of-examples.html" target="_blank" rel="noopener">阮一峰博客</a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">定义 test</span><br><span class="line"><span class="keyword">const</span> request = <span class="built_in">require</span>(<span class="string">'supertest'</span>)</span><br><span class="line"><span class="keyword">const</span> &#123; createToken &#125; = <span class="built_in">require</span>(<span class="string">'../lib/jwt'</span>) <span class="comment">//请求 token</span></span><br><span class="line"><span class="keyword">const</span> &#123; expect &#125; = <span class="built_in">require</span>(<span class="string">'chai'</span>)      </span><br><span class="line"><span class="keyword">const</span> server = <span class="built_in">require</span>(<span class="string">'../app'</span>)   <span class="comment">// 这里引用的是 app.listen() 输出的对象</span></span><br><span class="line"><span class="keyword">const</span> AV = <span class="built_in">require</span>(<span class="string">'leancloud-storage'</span>)</span><br><span class="line"><span class="keyword">const</span> config = <span class="built_in">require</span>(<span class="string">'../lib/config'</span>)</span><br><span class="line"></span><br><span class="line">describe(<span class="string">'test audioChannel'</span>, <span class="keyword">async</span>() =&gt; &#123;</span><br><span class="line">  <span class="keyword">let</span> api;</span><br><span class="line">  <span class="keyword">let</span> token;</span><br><span class="line">  beforeEach(<span class="keyword">async</span>() =&gt; &#123;</span><br><span class="line">    api = request(server)</span><br><span class="line">    token = <span class="keyword">await</span> createToken()</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Koa = <span class="built_in">require</span>(<span class="string">'koa'</span>)</span><br><span class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Koa()</span><br><span class="line"><span class="keyword">const</span> views = <span class="built_in">require</span>(<span class="string">'koa-views'</span>)</span><br><span class="line"><span class="keyword">const</span> json = <span class="built_in">require</span>(<span class="string">'koa-json'</span>)</span><br><span class="line"><span class="keyword">const</span> onerror = <span class="built_in">require</span>(<span class="string">'koa-onerror'</span>)</span><br><span class="line"><span class="keyword">const</span> bodyparser = <span class="built_in">require</span>(<span class="string">'koa-bodyparser'</span>)</span><br><span class="line"><span class="keyword">const</span> log4js = <span class="built_in">require</span>(<span class="string">'koa-log4'</span>)  <span class="comment">//koa 日志包</span></span><br><span class="line"><span class="keyword">const</span> logger = log4js.getLogger(<span class="string">'app'</span>)  <span class="comment">//这里的 APP 是什么意思</span></span><br><span class="line"></span><br><span class="line">AV.init(&#123;</span><br><span class="line">  appId: config.heyzgo.ID,</span><br><span class="line">  appKey: config.heyzgo.Key,</span><br><span class="line">  masterKey: config.heyzgo.MasterKey</span><br><span class="line">&#125;);</span><br><span class="line">AV.Cloud.useMasterKey();</span><br><span class="line"></span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> server = app.listen(<span class="number">9999</span>, () =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'[demo] request post is starting at port 9999'</span>)</span><br><span class="line">&#125;)        <span class="comment">//这里需要输出 app.listen() 的返回值</span></span><br><span class="line">          <span class="comment">//mocha 需要这引用这个</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = server</span><br></pre></td></tr></table></figure>
+<p>输出测试结果到网页:<br>npm install –save-dev mochawesome<br>mocha testfile.js –reporter mochawesome</p>
+<ul>
+<li>–growl, -G<br>打开–growl参数，就会将测试结果在桌面显示。</li>
+<li>–watch，-w<br>–watch参数用来监视指定的测试脚本。只要测试脚本有变化，就会自动运行Mocha。</li>
+<li>–bail, -b<br>–bail参数指定只要有一个测试用例没有通过，就停止执行后面的测试用例。这对持续集成很有用。</li>
+<li>–grep, -g<br>–grep参数用于搜索测试用例的名称（即it块的第一个参数），然后只执行匹配的测试用例。</li>
+<li>–invert, -i<br>–invert参数表示只运行不符合条件的测试脚本，必须与–grep参数配合使用。</li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/27/socket  各种事件/" class="archive-article-date">
-  	<time datetime="2017-11-27T04:24:43.911Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-27</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/27/koa-log4/koa-log4/" class="archive-article-date">
-  	<time datetime="2017-11-27T04:24:34.953Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-27</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/27/mocha test/" class="archive-article-date">
-  	<time datetime="2017-11-27T04:24:25.008Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-27</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/27/将时间戳转换成日期格式/" class="archive-article-date">
-  	<time datetime="2017-11-27T04:24:16.590Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-27</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/27/Nginx配置/" class="archive-article-date">
-  	<time datetime="2017-11-27T04:24:04.555Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-27</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
       
-        </div></section>
+
       
+
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/20/mongoose大致讲解/" class="archive-article-date">
-  	<time datetime="2016-12-19T16:07:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/20/mongoose大致讲解/">mongoose初学入门</a>
-    </h1>
-  
+      </div>
+    </span>
+  </div>
+</div>
 
-        <div class="article-info info-on-right">
-          
-          
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/11/27/mocha test/" alt="微信分享二维码">
+    </div>
+</div>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/13/Mongodump 和 Mongorestore /" class="archive-article-date">
-  	<time datetime="2016-12-13T08:29:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-13</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2017/11/27/koa-log4/koa-log4/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/11/27/将时间戳转换成日期格式/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/13/Mongodump 和 Mongorestore /">Mongodump 和 Mongorestore</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/13/macOS Sierra 安装MongoDB/" class="archive-article-date">
-  	<time datetime="2016-12-13T05:51:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/13/macOS Sierra 安装MongoDB/">macOS Sierra 安装MongoDB</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/11/29/添加2个SSH-key/" class="archive-article-date">
-  	<time datetime="2016-11-29T04:07:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/29/添加2个SSH-key/">添加2个SSH-key</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -415,8 +334,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
