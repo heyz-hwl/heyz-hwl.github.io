@@ -6,18 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>socket.io 事件 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Object.keys(socket.server.sockets.sockets)是当前连接上 socket 的所有客户端的socket.IdObject.keys(socket.server.sockets.connected)也是Object.keys(socket.server.eio.clients) soc">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="socket.io 事件">
 <meta property="og:url" content="http://yoursite.com/2017/11/27/socket  各种事件/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Object.keys(socket.server.sockets.sockets)是当前连接上 socket 的所有客户端的socket.IdObject.keys(socket.server.sockets.connected)也是Object.keys(socket.server.eio.clients) socket.on(‘login’, (socket) =&amp;gt; {  socket">
 <meta property="og:locale" content="cn">
-<meta property="og:updated_time" content="2017-11-27T04:24:43.911Z">
+<meta property="og:updated_time" content="2017-11-27T04:36:35.654Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="socket.io 事件">
 <meta name="twitter:description" content="Object.keys(socket.server.sockets.sockets)是当前连接上 socket 的所有客户端的socket.IdObject.keys(socket.server.sockets.connected)也是Object.keys(socket.server.eio.clients) socket.on(‘login’, (socket) =&amp;gt; {  socket">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -161,6 +161,21 @@
             <article id="post-socket  各种事件" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      socket.io 事件
+    </h1>
+  
+
+        
+        <a href="/2017/11/27/socket  各种事件/" class="archive-article-date">
+  	<time datetime="2017-11-27T04:24:43.911Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-27</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
         <p>Object.keys(socket.server.sockets.sockets)是当前连接上 socket 的所有客户端的socket.Id<br>Object.keys(socket.server.sockets.connected)也是<br>Object.keys(socket.server.eio.clients)</p>
@@ -176,7 +191,8 @@
 </li>
 <li><h1 id="加入房间"><a href="#加入房间" class="headerlink" title="加入房间"></a>加入房间</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">socket.on(&apos;joinRoom&apos;, (data) =&gt; &#123;</span><br><span class="line">    console.log(`joinRoom success`)</span><br><span class="line">    socket.join(`room$&#123;data.roomId&#125;`);</span><br><span class="line">    // socket.in(`room$&#123;data.roomId&#125;`).emit(&apos;userJoinRoom&apos;, `$&#123;data.userId&#125; join in the Room$&#123;data.roomId&#125;`);//发送给房内(包括自己)一个事件</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
 </li>
-<li><h1 id="离开房间"><a href="#离开房间" class="headerlink" title="离开房间"></a>离开房间</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">socket.on(&apos;leaveRoom&apos;, (data) =&gt; &#123;</span><br><span class="line">    console.log(`leaveRoom success`)</span><br><span class="line">    socket.leave(`room$&#123;data.roomId&#125;`);</span><br><span class="line">    // socket.to(`room$&#123;data.roomId&#125;`).emit(&apos;userLeaveRoom&apos;, `$&#123;data.userId&#125; leave in the Room$&#123;data.roomId&#125;`)//发送给房内(不包括自己)一个事件</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure></li>
+<li><h1 id="离开房间"><a href="#离开房间" class="headerlink" title="离开房间"></a>离开房间</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">socket.on(&apos;leaveRoom&apos;, (data) =&gt; &#123;</span><br><span class="line">    console.log(`leaveRoom success`)</span><br><span class="line">    socket.leave(`room$&#123;data.roomId&#125;`);</span><br><span class="line">    // socket.to(`room$&#123;data.roomId&#125;`).emit(&apos;userLeaveRoom&apos;, `$&#123;data.userId&#125; leave in the Room$&#123;data.roomId&#125;`)//发送给房内(不包括自己)一个事件</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 
       
@@ -273,7 +289,7 @@
   
   
     <a href="/2017/11/27/koa-log4/koa-log4/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
+      <div class="article-nav-title">koa-log4</div>
       <i class="icon-circle-right"></i>
     </a>
   
