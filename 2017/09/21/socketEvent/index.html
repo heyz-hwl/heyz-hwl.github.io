@@ -8,13 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="申请麦序  12345678socket.sockets.emit(&apos;applySequence&apos;, &amp;#123;	data: &amp;#123;		userList: userList,		applicant: &amp;#123;		userId: userId,		order_nub">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/09/21/socketEvent/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="申请麦序  12345678socket.sockets.emit(&apos;applySequence&apos;, &amp;#123;	data: &amp;#123;		userList: userList,		applicant: &amp;#123;		userId: userId,		order_nub: order_nub	&amp;#125;&amp;#125;);  麦序换人  123456 socket.sockets.emit(">
 <meta property="og:locale" content="cn">
+<meta property="og:updated_time" content="2017-09-22T02:10:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="申请麦序  12345678socket.sockets.emit(&apos;applySequence&apos;, &amp;#123;	data: &amp;#123;		userList: userList,		applicant: &amp;#123;		userId: userId,		order_nub: order_nub	&amp;#125;&amp;#125;);  麦序换人  123456 socket.sockets.emit(">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -154,428 +158,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-pading" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/27/pading/">padding 顺序</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/27/pading/" class="archive-article-date">
-  	<time datetime="2017-11-27T10:28:03.344Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="4种可能的情况，举例说明："><a href="#4种可能的情况，举例说明：" class="headerlink" title="4种可能的情况，举例说明："></a>4种可能的情况，举例说明：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">padding:10px;                              四个内边距都是10px</span><br><span class="line">padding:5px 10px;   　                     上下5px　左右10px</span><br><span class="line">padding:5px 10px 15px;                     上5px　右10px　下15px   左因为缺省与右相等，则为10px</span><br><span class="line">padding:5px 10px 15px 20px;                上5px　右10px　下15px 　左20px</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/27/pading/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-socket  各种事件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/27/socket  各种事件/">socket.io 事件</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/27/socket  各种事件/" class="archive-article-date">
-  	<time datetime="2017-11-27T04:24:43.911Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Object.keys(socket.server.sockets.sockets)是当前连接上 socket 的所有客户端的socket.Id<br>Object.keys(socket.server.sockets.connected)也是<br>Object.keys(socket.server.eio.clients)</p>
-<p>socket.on(‘login’, (socket) =&gt; {<br>  socketId = socket.id//当前连接的 socketId<br>})</p>
-<p>socket.id 就是当前客户端的 socketId</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//发送给当前请求的客户端</span><br><span class="line">socket.emit(&apos;message&apos;, &quot;this is a test&quot;);</span><br><span class="line"></span><br><span class="line">// 发送给除了当前请求的所有的客户端</span><br><span class="line">socket.broadcast.emit(&apos;message&apos;, &quot;this is a test&quot;);</span><br><span class="line"></span><br><span class="line">// 发送给所有的客户端包括请求的客户端</span><br><span class="line">io.sockets.emit(&apos;message&apos;, &quot;this is a test&quot;);</span><br><span class="line"></span><br><span class="line">// 发送给在game房间(Room)的除啦当前请求的所有客户端</span><br><span class="line">socket.broadcast.to(&apos;game&apos;).emit(&apos;message&apos;, &apos;nice game&apos;);</span><br><span class="line"></span><br><span class="line">//发送给在game房间(Room)的包括请求客户端的所有的客户端</span><br><span class="line">io.sockets.in(&apos;game&apos;).emit(&apos;message&apos;, &apos;cool game&apos;);</span><br></pre></td></tr></table></figure>
-<h2 id="发送给socketid-客户端标识-指定客户端"><a href="#发送给socketid-客户端标识-指定客户端" class="headerlink" title="//发送给socketid(客户端标识)指定客户端"></a>//<strong>发送给socketid(客户端标识)指定客户端</strong></h2><ul>
-<li><p>1.0版本前使用下面</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">io.sockets.socket(socketid).emit(&apos;message&apos;, &apos;for your eyes only&apos;);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>1.0版本后使用下面</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">io.sockets.connected[socket.id].emit(&apos;message&apos;,&apos;for your eyes only&apos; );</span><br></pre></td></tr></table></figure>
-</li>
-<li><h1 id="加入房间"><a href="#加入房间" class="headerlink" title="加入房间"></a>加入房间</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">socket.on(&apos;joinRoom&apos;, (data) =&gt; &#123;</span><br><span class="line">    console.log(`joinRoom success`)</span><br><span class="line">    socket.join(`room$&#123;data.roomId&#125;`);</span><br><span class="line">    // socket.in(`room$&#123;data.roomId&#125;`).emit(&apos;userJoinRoom&apos;, `$&#123;data.userId&#125; join in the Room$&#123;data.roomId&#125;`);//发送给房内(包括自己)一个事件</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
-</li>
-<li><h1 id="离开房间"><a href="#离开房间" class="headerlink" title="离开房间"></a>离开房间</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">socket.on(&apos;leaveRoom&apos;, (data) =&gt; &#123;</span><br><span class="line">    console.log(`leaveRoom success`)</span><br><span class="line">    socket.leave(`room$&#123;data.roomId&#125;`);</span><br><span class="line">    // socket.to(`room$&#123;data.roomId&#125;`).emit(&apos;userLeaveRoom&apos;, `$&#123;data.userId&#125; leave in the Room$&#123;data.roomId&#125;`)//发送给房内(不包括自己)一个事件</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/27/socket  各种事件/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-koa-log4/koa-log4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/27/koa-log4/koa-log4/">koa-log4</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/27/koa-log4/koa-log4/" class="archive-article-date">
-  	<time datetime="2017-11-27T04:24:34.953Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>参考文章: <a href="https://zhuanlan.zhihu.com/p/22110802" target="_blank" rel="noopener">知乎专栏</a></p>
-<p>一、日志配置<br>1、 依赖选择： 根据koa wiki中的介绍，中间件 koa-log4 是 log4js-node koa版本， 且支持 koa2。 npm i –save koa-log4<br>2、 新建日志路径： ./logs， 用于存放生成的日志文件<br>3、 新建日志配置文件： ./log.js, 加入代码：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">./log.js</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br><span class="line"><span class="keyword">const</span> log4js = <span class="built_in">require</span>(<span class="string">'koa-log4'</span>)</span><br><span class="line"><span class="keyword">const</span> logDir = path.join(__dirname, <span class="string">'logs'</span>)  <span class="comment">//配置目标路径 logs</span></span><br><span class="line"><span class="comment">/*生成logs目录*/</span></span><br><span class="line"> <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="built_in">require</span>(<span class="string">'fs'</span>).mkdirSync(logDir)  <span class="comment">//新建目录， ./logs</span></span><br><span class="line"> &#125; <span class="keyword">catch</span>(err) &#123;</span><br><span class="line">    <span class="keyword">if</span>(err.code !== <span class="string">'EEXIST'</span>) &#123;</span><br><span class="line">        <span class="built_in">console</span>.error(<span class="string">'Could not set up log directory, error was: '</span>, err)</span><br><span class="line">        process.exit(<span class="number">1</span>)</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="comment">//根据log 配置文件(log4js.json)配置日志文件</span></span><br><span class="line">log4js.configure(path.join(__dirname, <span class="string">'log4js.json'</span>), &#123; <span class="attr">cwd</span>: logDir &#125;)</span><br><span class="line"><span class="comment">//注册日志： 日志名（前缀）startup</span></span><br><span class="line"><span class="keyword">const</span> logger = log4js.getLogger(<span class="string">'startup'</span>)</span><br><span class="line"><span class="comment">//输入日志</span></span><br><span class="line">logger.info(<span class="string">'logs config finished!'</span>)</span><br></pre></td></tr></table></figure>
-<p>5、 日志配置文件 (log4js.json) 编写 实际使用中以下注释全部删除</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"appenders"</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="string">"type"</span>: <span class="string">"console"</span>  <span class="comment">//控制台输出日志</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="string">"type"</span>: <span class="string">"clustered"</span>,  <span class="comment">//支持多 appender 时添加， </span></span><br><span class="line">      <span class="string">"appenders"</span>: [</span><br><span class="line">         &#123;  <span class="comment">//在./logs目录生成 http.log文件</span></span><br><span class="line">          <span class="string">"type"</span>: <span class="string">"dateFile"</span>, <span class="comment">//datefile表示是输出按时间分文件的日志</span></span><br><span class="line">          <span class="string">"filename"</span>: <span class="string">"http.log"</span>,  <span class="comment">//文件件名</span></span><br><span class="line">          <span class="string">"pattern"</span>: <span class="string">"-yyyy-MM-dd"</span>,  <span class="comment">//非当天日志命名格式，例如：http.log-2016-08-02</span></span><br><span class="line">          <span class="string">"category"</span>: <span class="string">"http"</span>  <span class="comment">//过滤所有日志名为 http 的日志</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;  <span class="comment">//记录所有日志</span></span><br><span class="line">          <span class="string">"type"</span>: <span class="string">"file"</span>,  <span class="comment">//file表示日志输出为普通文件,在此种配置下,所有日志会输出到该日志文件</span></span><br><span class="line">          <span class="string">"filename"</span>: <span class="string">"app.log"</span>, <span class="comment">//日志文件名</span></span><br><span class="line">          <span class="string">"maxLogSize"</span>: <span class="number">10485760</span>,  <span class="comment">//设置日志文件的最大大小，文件体积超过时，自动分文件</span></span><br><span class="line">          <span class="string">"pattern"</span>: <span class="string">"-yyyy-MM-dd"</span>, <span class="comment">//</span></span><br><span class="line">          <span class="string">"numBackups"</span>: <span class="number">5</span>  <span class="comment">//备份的文件数量,如果文件过多则会将最旧的删除</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="string">"type"</span>: <span class="string">"logLevelFilter"</span>, <span class="comment">//日志级别过滤</span></span><br><span class="line">          <span class="string">"level"</span>: <span class="string">"ERROR"</span>,  <span class="comment">//该日志文件只记录级别在error及以上的日志</span></span><br><span class="line">          <span class="string">"appender"</span>: &#123;</span><br><span class="line">            <span class="string">"type"</span>: <span class="string">"file"</span>,  </span><br><span class="line">            <span class="string">"filename"</span>: <span class="string">"errors.log"</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>6、 在koa web工程中应如 log4</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Koa = <span class="built_in">require</span>(<span class="string">'koa'</span>)</span><br><span class="line"><span class="keyword">const</span> co = <span class="built_in">require</span>(<span class="string">'co'</span>)</span><br><span class="line"><span class="keyword">const</span> nunjucksViews = <span class="built_in">require</span>(<span class="string">'koa-nunjucks-promise'</span>)</span><br><span class="line"><span class="keyword">const</span> router = <span class="built_in">require</span>(<span class="string">'koa-router'</span>)</span><br><span class="line"><span class="keyword">const</span> mount = <span class="built_in">require</span>(<span class="string">'koa-mount'</span>)</span><br><span class="line"><span class="keyword">const</span> server = <span class="built_in">require</span>(<span class="string">'koa-static'</span>)</span><br><span class="line"><span class="keyword">const</span> session = <span class="built_in">require</span>(<span class="string">"koa-session2"</span>)</span><br><span class="line"><span class="keyword">const</span> log4js = <span class="built_in">require</span>(<span class="string">'koa-log4'</span>)</span><br><span class="line"><span class="comment">//----------------------------</span></span><br><span class="line"><span class="built_in">require</span>(<span class="string">'./log'</span>)  <span class="comment">//引入（运行）日志配置文件， 生产日志目录及相应文件</span></span><br><span class="line"><span class="keyword">const</span> logger = log4js.getLogger(<span class="string">'app'</span>) <span class="comment">//将当前文件日志命名为 app </span></span><br><span class="line">logger.info(<span class="string">'--------step into koa-------------'</span>)</span><br><span class="line"><span class="comment">//----------------------------</span></span><br><span class="line"><span class="keyword">const</span> store = <span class="built_in">require</span>(<span class="string">'./store'</span>)</span><br><span class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Koa()</span><br><span class="line"><span class="keyword">const</span> route = <span class="keyword">new</span> router()</span><br><span class="line">app.use(nunjucksViews(<span class="string">`<span class="subst">$&#123;__dirname&#125;</span>/views`</span>, &#123;  <span class="comment">//配置模板文件路径，</span></span><br><span class="line">    ext: <span class="string">'html'</span>,   <span class="comment">//渲染文件后缀为 html</span></span><br><span class="line">    noCache: <span class="literal">true</span>,  <span class="comment">//开发环境下不设置缓存</span></span><br><span class="line">    watch: <span class="literal">true</span>,  <span class="comment">//开发环境下观察模板文件的变化并更新</span></span><br><span class="line">    filters: &#123;  <span class="comment">//过滤器  </span></span><br><span class="line">        json: <span class="function"><span class="keyword">function</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">          <span class="keyword">return</span> <span class="built_in">JSON</span>.stringify(str, <span class="literal">null</span>, <span class="number">2</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    globals: &#123;  <span class="comment">//设置对于nunjucks的全局变量</span></span><br><span class="line">        <span class="comment">// staticPath: '//static'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;))</span><br><span class="line">app.use(mount(<span class="string">'/static'</span>, server(<span class="string">`<span class="subst">$&#123;__dirname&#125;</span>/public`</span>)))  <span class="comment">//设置静态文件路径</span></span><br><span class="line"><span class="comment">//------------- 记录所有http请求---------------</span></span><br><span class="line">app.use(log4js.koaLogger(log4js.getLogger(<span class="string">'http'</span>), &#123; <span class="attr">level</span>: <span class="string">'auto'</span> &#125;))</span><br><span class="line"><span class="comment">//-------------------------------------------</span></span><br><span class="line">app.use(session(&#123;</span><br><span class="line">    key: <span class="string">"sessionId"</span>,   <span class="comment">//default "koa:sess",</span></span><br><span class="line">    store: <span class="keyword">new</span> store(),</span><br><span class="line">    maxAge: <span class="number">5000</span>  <span class="comment">//设置session超时时间</span></span><br><span class="line">&#125;))</span><br><span class="line">route.get(<span class="string">'/'</span>, co.wrap(<span class="function"><span class="keyword">function</span>* (<span class="params">ctx</span>) </span>&#123;</span><br><span class="line"> <span class="comment">//-------------------------------------------</span></span><br><span class="line">    logger.debug(<span class="string">' this is test log'</span>)  <span class="comment">//打印日志，日志级别 debug</span></span><br><span class="line"><span class="comment">//-------------------------------------------</span></span><br><span class="line">    <span class="keyword">if</span>(ctx.session.view === <span class="literal">undefined</span>) &#123;</span><br><span class="line">        ctx.session.view = <span class="number">0</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        ctx.session.view += <span class="number">1</span>   </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'viewNum'</span>, ctx.session.view)</span><br><span class="line">    <span class="keyword">yield</span> ctx.render(<span class="string">'index'</span>, &#123;<span class="attr">title</span>: <span class="string">'Nunjucks'</span>, <span class="attr">content</span>: <span class="string">'Feifeiyu yeah!'</span>&#125;)</span><br><span class="line">&#125;))</span><br><span class="line">route.get(<span class="string">'/route/test'</span>, co.wrap(<span class="function"><span class="keyword">function</span>* (<span class="params">ctx</span>) </span>&#123;</span><br><span class="line">    logger.info(<span class="string">' this is test log2'</span>)  <span class="comment">//打印日志，日志级别 info</span></span><br><span class="line">    ctx.body = <span class="string">'feifeiyu nuaa'</span></span><br><span class="line">&#125;))</span><br><span class="line">app.use(route.routes())</span><br><span class="line">    .use(route.allowedMethods())</span><br><span class="line">app.listen(<span class="number">3000</span>, () =&gt; <span class="built_in">console</span>.log(<span class="string">'server started， port 3000'</span>))</span><br><span class="line"><span class="built_in">module</span>.exports = app</span><br></pre></td></tr></table></figure>
-<p><img src="resources/01F7D30F28E501E10078F2BE59AEFBBC.jpg =409x413" alt="IMAGE"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/27/koa-log4/koa-log4/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-mocha test" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/27/mocha test/">mocha test</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/27/mocha test/" class="archive-article-date">
-  	<time datetime="2017-11-27T04:24:25.008Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="http://www.ruanyifeng.com/blog/2015/12/a-mocha-tutorial-of-examples.html" target="_blank" rel="noopener">阮一峰博客</a></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">定义 test</span><br><span class="line"><span class="keyword">const</span> request = <span class="built_in">require</span>(<span class="string">'supertest'</span>)</span><br><span class="line"><span class="keyword">const</span> &#123; createToken &#125; = <span class="built_in">require</span>(<span class="string">'../lib/jwt'</span>) <span class="comment">//请求 token</span></span><br><span class="line"><span class="keyword">const</span> &#123; expect &#125; = <span class="built_in">require</span>(<span class="string">'chai'</span>)      </span><br><span class="line"><span class="keyword">const</span> server = <span class="built_in">require</span>(<span class="string">'../app'</span>)   <span class="comment">// 这里引用的是 app.listen() 输出的对象</span></span><br><span class="line"><span class="keyword">const</span> AV = <span class="built_in">require</span>(<span class="string">'leancloud-storage'</span>)</span><br><span class="line"><span class="keyword">const</span> config = <span class="built_in">require</span>(<span class="string">'../lib/config'</span>)</span><br><span class="line"></span><br><span class="line">describe(<span class="string">'test audioChannel'</span>, <span class="keyword">async</span>() =&gt; &#123;</span><br><span class="line">  <span class="keyword">let</span> api;</span><br><span class="line">  <span class="keyword">let</span> token;</span><br><span class="line">  beforeEach(<span class="keyword">async</span>() =&gt; &#123;</span><br><span class="line">    api = request(server)</span><br><span class="line">    token = <span class="keyword">await</span> createToken()</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Koa = <span class="built_in">require</span>(<span class="string">'koa'</span>)</span><br><span class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Koa()</span><br><span class="line"><span class="keyword">const</span> views = <span class="built_in">require</span>(<span class="string">'koa-views'</span>)</span><br><span class="line"><span class="keyword">const</span> json = <span class="built_in">require</span>(<span class="string">'koa-json'</span>)</span><br><span class="line"><span class="keyword">const</span> onerror = <span class="built_in">require</span>(<span class="string">'koa-onerror'</span>)</span><br><span class="line"><span class="keyword">const</span> bodyparser = <span class="built_in">require</span>(<span class="string">'koa-bodyparser'</span>)</span><br><span class="line"><span class="keyword">const</span> log4js = <span class="built_in">require</span>(<span class="string">'koa-log4'</span>)  <span class="comment">//koa 日志包</span></span><br><span class="line"><span class="keyword">const</span> logger = log4js.getLogger(<span class="string">'app'</span>)  <span class="comment">//这里的 APP 是什么意思</span></span><br><span class="line"></span><br><span class="line">AV.init(&#123;</span><br><span class="line">  appId: config.heyzgo.ID,</span><br><span class="line">  appKey: config.heyzgo.Key,</span><br><span class="line">  masterKey: config.heyzgo.MasterKey</span><br><span class="line">&#125;);</span><br><span class="line">AV.Cloud.useMasterKey();</span><br><span class="line"></span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> server = app.listen(<span class="number">9999</span>, () =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'[demo] request post is starting at port 9999'</span>)</span><br><span class="line">&#125;)        <span class="comment">//这里需要输出 app.listen() 的返回值</span></span><br><span class="line">          <span class="comment">//mocha 需要这引用这个</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = server</span><br></pre></td></tr></table></figure>
-<p>输出测试结果到网页:<br>npm install –save-dev mochawesome<br>mocha testfile.js –reporter mochawesome</p>
-<ul>
-<li>–growl, -G<br>打开–growl参数，就会将测试结果在桌面显示。</li>
-<li>–watch，-w<br>–watch参数用来监视指定的测试脚本。只要测试脚本有变化，就会自动运行Mocha。</li>
-<li>–bail, -b<br>–bail参数指定只要有一个测试用例没有通过，就停止执行后面的测试用例。这对持续集成很有用。</li>
-<li>–grep, -g<br>–grep参数用于搜索测试用例的名称（即it块的第一个参数），然后只执行匹配的测试用例。</li>
-<li>–invert, -i<br>–invert参数表示只运行不符合条件的测试脚本，必须与–grep参数配合使用。</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/27/mocha test/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-将时间戳转换成日期格式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/27/将时间戳转换成日期格式/">时间格式转化</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/27/将时间戳转换成日期格式/" class="archive-article-date">
-  	<time datetime="2017-11-27T04:24:16.590Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>#使用 moment 包,官网地址<a href="http://momentjs.cn/" target="_blank" rel="noopener">链接</a></p>
-<h2 id="将时间戳转换成日期格式："><a href="#将时间戳转换成日期格式：" class="headerlink" title="将时间戳转换成日期格式："></a>将时间戳转换成日期格式：</h2><blockquote>
-<p>简单的一句代码<br><code>var date = new Date(时间戳); //获取一个时间对象</code></p>
-</blockquote>
-<p>注意：如果是uinx时间戳记得乘于1000。比如php函数time()获得的时间戳就要乘于1000<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">/*----------下面是获取时间日期的方法，需要什么样的格式自己拼接起来就好了----------*/</span><br><span class="line">date.getFullYear();//获取完整的年份(4位,1970)</span><br><span class="line">date.getMonth();//获取月份(0-11,0代表1月,用的时候记得加上1)</span><br><span class="line">date.getDate();//获取日(1-31)</span><br><span class="line">date.getTime();//获取时间(从1970.1.1开始的毫秒数)</span><br><span class="line">date.getHours();//获取小时数(0-23)</span><br><span class="line">date.getMinutes();//获取分钟数(0-59)</span><br><span class="line">date.getSeconds();//获取秒数(0-59)</span><br><span class="line">//更多好用的方法可以到这查找 -&gt; http://www.w3school.com.cn/jsref/jsref_obj_date.asp</span><br><span class="line">// 例子，比如需要这样的格式：yyyy-MM-dd hh:mm:ss</span><br><span class="line">var date = new Date(1398250549490);</span><br><span class="line">Y = date.getFullYear() + &apos;-&apos;;</span><br><span class="line">M = (date.getMonth()+1 &lt; 10 ? &apos;0&apos;+(date.getMonth()+1) : date.getMonth()+1) + &apos;-&apos;;</span><br><span class="line">D = date.getDate() + &apos; &apos;;</span><br><span class="line">h = date.getHours() + &apos;:&apos;;</span><br><span class="line">m = date.getMinutes() + &apos;:&apos;;</span><br><span class="line">s = date.getSeconds(); </span><br><span class="line">console.log(Y+M+D+h+m+s); //呀麻碟</span><br><span class="line">//输出结果：2014-04-23 18:55:49</span><br></pre></td></tr></table></figure></p>
-<h2 id="将日期格式转换成时间戳："><a href="#将日期格式转换成时间戳：" class="headerlink" title="将日期格式转换成时间戳："></a>将日期格式转换成时间戳：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// 也很简单</span><br><span class="line">date = new Date(&apos;2014-04-23 18:55:49:123&apos;);</span><br><span class="line">//传入一个时间格式，如果不传入就是获取现在的时间了，就这么简单。</span><br><span class="line">// 有三种方式获取</span><br><span class="line">time1 = date.getTime()</span><br><span class="line">time2 = date.valueOf()</span><br><span class="line">time3 = Date.parse(date)</span><br><span class="line">// 三种获取的区别</span><br><span class="line">第一、第二种：会精确到毫秒</span><br><span class="line">第三种：只能精确到秒，毫秒将用0来代替</span><br><span class="line">// 比如上面代码输出的结果(一眼就能看出区别)：</span><br><span class="line">//    1398250549123</span><br><span class="line">//    1398250549123</span><br><span class="line">//    1398250549000</span><br></pre></td></tr></table></figure>
-<p>注意：获取到的时间戳除于1000就可以获得unix的时间戳了，在传值给PHP时用得到。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/27/将时间戳转换成日期格式/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Nginx配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/27/Nginx配置/">Nginx 配置</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/27/Nginx配置/" class="archive-article-date">
-  	<time datetime="2017-11-27T04:24:04.555Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Nginx配置参数中文说明"><a href="#Nginx配置参数中文说明" class="headerlink" title="Nginx配置参数中文说明"></a>Nginx配置参数中文说明</h2><blockquote>
-<p>.\conf\ - 配置文件目录<br>.\conf\nginx.conf - 主配置文件<br>.\html\ - 默认网站文件位置<br>.\log\ - 默认日志文件位置<br>HTTP默认端口： TCP 80<br>HTTPS默认端口：* TCP 443</p>
-</blockquote>
-<h2 id="nginx-conf配置介绍"><a href="#nginx-conf配置介绍" class="headerlink" title="nginx.conf配置介绍"></a>nginx.conf配置介绍</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#定义Nginx运行的用户和用户组</span><br><span class="line">#user  nobody; </span><br><span class="line"></span><br><span class="line">#nginx进程数，建议设置为等于CPU总核心数。</span><br><span class="line">worker_processes  <span class="number">1</span>; </span><br><span class="line"></span><br><span class="line">#全局错误日志定义类型，[ debug | info | notice | warn | error | crit ]</span><br><span class="line">#error_log  logs/error.log;</span><br><span class="line">#error_log  logs/error.log  notice;</span><br><span class="line">#error_log  logs/error.log  info;</span><br><span class="line"></span><br><span class="line">#进程文件</span><br><span class="line">#pid        logs/nginx.pid;</span><br><span class="line"></span><br><span class="line">#工作模式与连接数上限</span><br><span class="line">events &#123;</span><br><span class="line">    #单个进程最大连接数（最大连接数=连接数*进程数）</span><br><span class="line">    worker_connections  <span class="number">1024</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#设定http服务器</span><br><span class="line">http &#123;</span><br><span class="line">    #文件扩展名与文件类型映射表</span><br><span class="line">    include       mime.types;</span><br><span class="line">    #默认文件类型</span><br><span class="line">    default_type  application/octet-stream;</span><br><span class="line"></span><br><span class="line">    #log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '</span><br><span class="line">    #                  '$status $body_bytes_sent "$http_referer" '</span><br><span class="line">    #                  '"$http_user_agent" "$http_x_forwarded_for"';</span><br><span class="line"></span><br><span class="line">    #access_log  logs/access.log  main;</span><br><span class="line"></span><br><span class="line">    #开启高效文件传输模式，sendfile指令指定nginx是否调用sendfile函数来输出文件，对于普通应用设为 on，如果用来进行下载等应用磁盘IO重负载应用，可设置为off，以平衡磁盘与网络I/O处理速度，降低系统的负载。注意：如果图片显示不正常把这个改 成off。</span><br><span class="line">    sendfile        on;</span><br><span class="line"></span><br><span class="line">    #防止网络阻塞</span><br><span class="line">    #tcp_nopush     on;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    #长连接超时时间，单位是秒</span><br><span class="line">    #keepalive_timeout  0;</span><br><span class="line">    keepalive_timeout  <span class="number">65</span>;</span><br><span class="line"></span><br><span class="line">    #开启gzip压缩输出</span><br><span class="line">    #gzip  on;</span><br><span class="line"></span><br><span class="line">    #虚拟主机的配置</span><br><span class="line">    server &#123;</span><br><span class="line">        #监听端口</span><br><span class="line">        listen       <span class="number">80</span>;</span><br><span class="line"></span><br><span class="line">        #域名可以有多个，用空格隔开</span><br><span class="line">        server_name  localhost;</span><br><span class="line"></span><br><span class="line">        #默认编码</span><br><span class="line">        #charset utf-8;</span><br><span class="line"></span><br><span class="line">        #定义本虚拟主机的访问日志</span><br><span class="line">        #access_log  logs/host.access.log  main;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">            root   html;</span><br><span class="line">            index  index.html index.htm;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        #error_page  404              /404.html;</span><br><span class="line"></span><br><span class="line">        # redirect server error pages to the static page /50x.html</span><br><span class="line">        #</span><br><span class="line">        error_page   <span class="number">500</span> <span class="number">502</span> <span class="number">503</span> <span class="number">504</span>  /<span class="number">50</span>x.html;</span><br><span class="line">        location = <span class="regexp">/50x.html &#123;</span></span><br><span class="line"><span class="regexp">            root   html;</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">        # proxy the PHP scripts to Apache listening on 127.0.0.1:80</span></span><br><span class="line"><span class="regexp">        #</span></span><br><span class="line"><span class="regexp">        #location ~ \.php$ &#123;</span></span><br><span class="line"><span class="regexp">        #    proxy_pass   http:/</span><span class="regexp">/127.0.0.1;</span></span><br><span class="line"><span class="regexp">        #&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">        # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000</span></span><br><span class="line"><span class="regexp">        #</span></span><br><span class="line"><span class="regexp">        #location ~ \.php$ &#123;</span></span><br><span class="line"><span class="regexp">        #    root           html;</span></span><br><span class="line"><span class="regexp">        #    fastcgi_pass   127.0.0.1:9000;</span></span><br><span class="line"><span class="regexp">        #    fastcgi_index  index.php;</span></span><br><span class="line"><span class="regexp">        #    fastcgi_param  SCRIPT_FILENAME  /</span>scripts$fastcgi_script_name;</span><br><span class="line">        #    include        fastcgi_params;</span><br><span class="line">        #&#125;</span><br><span class="line"></span><br><span class="line">        # deny access to .htaccess files, if Apache's document root</span><br><span class="line">        # concurs with nginx's one</span><br><span class="line">        #</span><br><span class="line">        #location ~ /\.ht &#123;</span><br><span class="line">        #    deny  all;</span><br><span class="line">        #&#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    # another virtual host using mix of IP-, name-, and port-based configuration</span><br><span class="line">    #</span><br><span class="line">    #server &#123;</span><br><span class="line">    #    listen       8000;</span><br><span class="line">    #    listen       somename:8080;</span><br><span class="line">    #    server_name  somename  alias  another.alias;</span><br><span class="line"></span><br><span class="line">    #    location / &#123;</span><br><span class="line">    #        root   html;</span><br><span class="line">    #        index  index.html index.htm;</span><br><span class="line">    #    &#125;</span><br><span class="line">    #&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    # HTTPS server</span><br><span class="line">    #</span><br><span class="line">    #server &#123;</span><br><span class="line">    #    listen       443 ssl;</span><br><span class="line">    #    server_name  localhost;</span><br><span class="line"></span><br><span class="line">    #    ssl_certificate      cert.pem;</span><br><span class="line">    #    ssl_certificate_key  cert.key;</span><br><span class="line"></span><br><span class="line">    #    ssl_session_cache    shared:SSL:1m;</span><br><span class="line">    #    ssl_session_timeout  5m;</span><br><span class="line"></span><br><span class="line">    #    ssl_ciphers  HIGH:!aNULL:!MD5;</span><br><span class="line">    #    ssl_prefer_server_ciphers  on;</span><br><span class="line"></span><br><span class="line">    #    location / &#123;</span><br><span class="line">    #        root   html;</span><br><span class="line">    #        index  index.html index.htm;</span><br><span class="line">    #    &#125;</span><br><span class="line">    #&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/27/Nginx配置/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-socketEvent" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-socketEvent" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
@@ -607,6 +190,27 @@
       
 
       
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
     </div>
     <div class="article-info article-info-index">
       
@@ -614,16 +218,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/21/socketEvent/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/09/21/socketEvent/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2017/11/27/Nginx配置/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Nginx 配置
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/09/16/socket.io/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -643,217 +315,14 @@
 
 
 
-
-  
-    <article id="post-socket.io" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>SERVER (APP.JS)</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> app = <span class="built_in">require</span>(<span class="string">'express'</span>)()</span><br><span class="line">  , server = <span class="built_in">require</span>(<span class="string">'http'</span>).createServer(app)</span><br><span class="line">  , io = <span class="built_in">require</span>(<span class="string">'socket.io'</span>).listen(server);</span><br><span class="line"></span><br><span class="line">server.listen(<span class="number">80</span>);</span><br><span class="line"></span><br><span class="line">app.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">  res.sendfile(__dirname + <span class="string">'/index.html'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">io.sockets.on(<span class="string">'connection'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">socket</span>) </span>&#123;</span><br><span class="line">  socket.emit(<span class="string">'news'</span>, &#123; <span class="attr">hello</span>: <span class="string">'world'</span> &#125;);</span><br><span class="line">  socket.on(<span class="string">'my other event'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(data);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>其中 <code>io = require(&#39;socket.io&#39;).listen(server);</code> 将 socket.io 绑定到服务器上，于是任何连接到该服务器的客户端都具备了实时通信功能。 </p>
-<p><code>io.sockets.on(&#39;connection&#39;, function (socket) { ... })</code> 的作用是服务器监听所有客户端，并返回该新连接对象，接下来我们就可以通过该连接对象（socket）与客户端进行通信了。你可以看到不管是服务器还是客户端都有 emit 和 on 这两个函数，可以说 socket.io 的核心就是这两个函数了，通过 emit 和 on 可以轻松地实现服务器与客户端之间的双向通信。</p>
-</blockquote>
-<ul>
-<li><code>emit</code> ：用来发射一个事件或者说触发一个事件，第一个参数为事件名，第二个参数为要发送的数据，第三个参数为回调函数（一般省略，如需对方接受到信息后立即得到确认时，则需要用到回调函数）。</li>
-<li><code>on</code> ：用来监听一个 emit 发射的事件，第一个参数为要监听的事件名，第二个参数为一个匿名函数用来接收对方发来的数据，该匿名函数的第一个参数为接收的数据，若有第二个参数，则为要返回的函数。</li>
-</ul>
-<p>socket.io 提供了三种默认的事件（客户端和服务器都有）：connect 、message 、disconnect 。当与对方建立连接后自动触发 connect 事件，当收到对方发来的数据后触发 message 事件（通常为 socket.send() 触发），当对方关闭连接后触发 disconnect 事件。</p>
-<p>此外，socket.io 还支持自定义事件，毕竟以上三种事件应用范围有限，正是通过这些自定义的事件才实现了丰富多彩的通信。</p>
-<p>最后，需要注意的是，在服务器端区分以下三种情况：</p>
-<ul>
-<li>socket.emit() ：向建立该连接的客户端广播</li>
-<li>socket.broadcast.emit() ：向除去建立该连接的客户端的所有客户端广播</li>
-<li>io.sockets.emit() ：向所有客户端广播，等同于上面两个的和</li>
-</ul>
-<p>加入房间用 socket.join(‘room 10002’, () =&gt; {})</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/16/socket.io/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-status 解释" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>status:1000 —&gt; msg:’Parameter Missing!’</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/11/status 解释/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-HeyzGo表设计说明" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="HeyzGo表设计说明"><a href="#HeyzGo表设计说明" class="headerlink" title="HeyzGo表设计说明"></a>HeyzGo表设计说明</h1><h4 id="MySQL部分"><a href="#MySQL部分" class="headerlink" title="MySQL部分"></a>MySQL部分</h4><ul>
-<li>Recharge table（充值表）<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">建表语句如下：</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> Recharge(</span><br><span class="line">	<span class="keyword">id</span> <span class="built_in">int</span>(<span class="number">8</span>) <span class="keyword">not</span> <span class="literal">null</span> primary <span class="keyword">key</span> auto_increment,</span><br><span class="line">	userId <span class="built_in">varchar</span>(<span class="number">30</span>) <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">	order_no <span class="built_in">varchar</span>(<span class="number">20</span>) <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">unique</span>,</span><br><span class="line">	order_name <span class="built_in">varchar</span>(<span class="number">20</span>) <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">	amount <span class="built_in">decimal</span>(<span class="number">16</span>,<span class="number">2</span>) <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">default</span> <span class="number">0</span>,</span><br><span class="line">	heyz_num <span class="built_in">decimal</span>(<span class="number">16</span>,<span class="number">2</span>) <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">default</span> <span class="number">0</span>,</span><br><span class="line">	<span class="keyword">status</span> <span class="built_in">int</span>(<span class="number">4</span>) <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">	channel <span class="built_in">varchar</span>(<span class="number">20</span>) <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">	<span class="keyword">time</span> <span class="built_in">varchar</span>(<span class="number">20</span>) <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">	chargeId <span class="built_in">varchar</span>(<span class="number">30</span>) <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">	time_expire <span class="built_in">int</span>(<span class="number">15</span>) <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">	rate <span class="built_in">int</span>(<span class="number">4</span>) <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">default</span> <span class="number">0</span></span><br><span class="line">)<span class="keyword">engine</span>= <span class="keyword">InnoDB</span> <span class="keyword">default</span> <span class="keyword">charset</span>=utf8;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">充值表Recharge说明：</span><br><span class="line"></span><br><span class="line">id：自增ID</span><br><span class="line">userId：用户ID</span><br><span class="line">order_no：订单号，规则暂定为（YYYYMMDDHHmmss+随机4位数）</span><br><span class="line">order_name：订单名称</span><br><span class="line">amount：充值金额</span><br><span class="line">heyz_num：充值金额在rate比例时对应的黑石数</span><br><span class="line">status：状态：1-充值成功 2-充值失败 3-正在充值 4-订单过期</span><br><span class="line">channel：支付方式，目前仅支持wx</span><br><span class="line">time：充值时间</span><br><span class="line">chargeId：charge对象ID（当充值状态处于正在重置时，需要chargeId获取charge对象）</span><br><span class="line">time_expire：该充值订单的过期时间</span><br><span class="line">rate：充值金额和黑石数的比例，目前暂定 人民币：黑石数=1：10</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Consume table（消费表）<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">建表语句如下：</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> Consume(</span><br><span class="line">	<span class="keyword">id</span> <span class="built_in">int</span>(<span class="number">8</span>) <span class="keyword">not</span> <span class="literal">null</span> primary <span class="keyword">key</span> auto_increment,</span><br><span class="line">	userId <span class="built_in">varchar</span>(<span class="number">30</span>) <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">	order_no <span class="built_in">varchar</span>(<span class="number">20</span>) <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">unique</span>,</span><br><span class="line">	order_name <span class="built_in">varchar</span>(<span class="number">20</span>) <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">	amount <span class="built_in">decimal</span>(<span class="number">16</span>,<span class="number">2</span>) <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">default</span> <span class="number">0</span>,</span><br><span class="line">	heyz_num <span class="built_in">decimal</span>(<span class="number">16</span>,<span class="number">2</span>) <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">default</span> <span class="number">0</span>,</span><br><span class="line">	<span class="keyword">time</span> <span class="built_in">varchar</span>(<span class="number">20</span>) <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">	rate <span class="built_in">int</span>(<span class="number">4</span>) <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">default</span> <span class="number">0</span></span><br><span class="line">)<span class="keyword">engine</span>= <span class="keyword">InnoDB</span> <span class="keyword">default</span> <span class="keyword">charset</span>=utf8;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">消费表Consume说明：</span><br><span class="line"></span><br><span class="line">id：自增ID</span><br><span class="line">userId：用户ID</span><br><span class="line">order_no：订单号，规则暂定为（YYYYMMDDHHmmss+随机4位数）</span><br><span class="line">order_name：订单名称</span><br><span class="line">amount：黑石数在rate比例时对应的消费金额</span><br><span class="line">heyz_num：消费的黑石数</span><br><span class="line">time：消费时间</span><br><span class="line">rate：消费金额和黑石数的比例，目前暂定 人民币：黑石数=1：10</span><br></pre></td></tr></table></figure>
-<ul>
-<li>TradeRecord table（钱包使用记录表）<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">建表语句如下：</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> TradeRecord(</span><br><span class="line">	<span class="keyword">id</span> <span class="built_in">int</span>(<span class="number">8</span>) <span class="keyword">not</span> <span class="literal">null</span> primary <span class="keyword">key</span> auto_increment,</span><br><span class="line">	userId <span class="built_in">varchar</span>(<span class="number">30</span>) <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">	<span class="keyword">type</span> <span class="built_in">varchar</span>(<span class="number">10</span>) <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">	<span class="keyword">status</span> <span class="built_in">varchar</span>(<span class="number">2</span>) <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">	heyzNum <span class="built_in">decimal</span>(<span class="number">16</span>,<span class="number">2</span>) <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">default</span> <span class="number">0</span>,</span><br><span class="line">	<span class="keyword">time</span> <span class="built_in">varchar</span>(<span class="number">20</span>) <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">	<span class="keyword">timeStamp</span> <span class="built_in">varchar</span>(<span class="number">20</span>) <span class="keyword">not</span> <span class="literal">null</span></span><br><span class="line">)<span class="keyword">engine</span>= <span class="keyword">InnoDB</span> <span class="keyword">default</span> <span class="keyword">charset</span>=utf8;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">钱包使用记录表TradeRecord说明：</span><br><span class="line"></span><br><span class="line">id：自增ID</span><br><span class="line">userId：用户ID</span><br><span class="line"><span class="built_in">type</span>：记录类型（1-充值成功，2-成功埋宝箱，3-打开宝箱，4-宝箱过期，自动还宝箱，5-竞拍成功，6-竞拍失败）</span><br><span class="line">status：黑石数状态（+表示增加，-表示减少）</span><br><span class="line">heyzNum：黑石数</span><br><span class="line">time：创建时间</span><br><span class="line">timeStamp：创建时间戳</span><br></pre></td></tr></table></figure>
-<h3 id="LeanCloud-Class部分"><a href="#LeanCloud-Class部分" class="headerlink" title="LeanCloud Class部分"></a>LeanCloud Class部分</h3><p>_User表<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">HeyzId：账号</span><br><span class="line">academy：学院</span><br><span class="line">areaCode：地区代码</span><br><span class="line">audioIdObj：音频信息外键Pointer</span><br><span class="line">audioIdStr：音频信息ID</span><br><span class="line">audioLikeNum：音频点赞数</span><br><span class="line">audioUserMap：音频点赞用户的map对象&#123;UserId:UserId&#125;</span><br><span class="line">authData：</span><br><span class="line">avatar：头像Pointer（Files）</span><br><span class="line">avatarStatus：头像审核状态（booblean）</span><br><span class="line">avatarURL：头像地址URL</span><br><span class="line">badgeIds：勋章数（array）</span><br><span class="line">badges：（array）</span><br><span class="line">birthday：生日（DATE）</span><br><span class="line">blockList：（array）</span><br><span class="line">certify（NUMBER）</span><br><span class="line">checkinMax：留言打卡上限（NUMBER）</span><br><span class="line">college：大学</span><br><span class="line">commentCount：评论数（NUMBER）</span><br><span class="line">createdAt：创建时间（DATE）</span><br><span class="line">email</span><br><span class="line">emailVerified：是否通过验证&#123;boolean&#125;</span><br><span class="line">enrol：入学年份</span><br><span class="line">exp：经验（NUMBER）</span><br><span class="line">friendMax：好友上限（NUMBER）</span><br><span class="line">gender：性别（NUMBER）（1男2女）</span><br><span class="line">greetMax：打招呼上限（NUMBER）</span><br><span class="line">greetedCount：打招呼总数（NUMBER）</span><br><span class="line">height：身高（NUMBER）</span><br><span class="line">hobbyTags：爱好（array）</span><br><span class="line">imgIdStr：图片URL地址</span><br><span class="line">inviteCode：邀请码</span><br><span class="line">level：等级（NUMBER）</span><br><span class="line">location：人物位置（经纬度，JSON 格式，例如 &#123;<span class="string">"__type"</span>: <span class="string">"GeoPoint"</span>,<span class="string">"latitude"</span>: 39.9,<span class="string">"longitude"</span>: 116.4&#125;。）</span><br><span class="line">loverTags：喜好标签（array）</span><br><span class="line">major：专业</span><br><span class="line">mobilePhoneNumber：手机号</span><br><span class="line">mobilePhoneVerified：手机号是否通过验证（boolean）</span><br><span class="line">newAvatar：新头像（Pointer）</span><br><span class="line">newAvatarURL：新头像URL</span><br><span class="line">nickName：昵称</span><br><span class="line">objectId：唯一码</span><br><span class="line">openMax：开胶囊上限（NUMBER）</span><br><span class="line">password：密码</span><br><span class="line">personalTags：用户个人标签（array）</span><br><span class="line">produceMax：埋胶囊上限（NUMBER）</span><br><span class="line">profile：个性签名</span><br><span class="line">publishCount：可加经验的帖子数（NUMBER）</span><br><span class="line">salt：</span><br><span class="line">sessionToken</span><br><span class="line">shareCount：可加经验分享数量（NUMBER）</span><br><span class="line">updatedAt：更新时间（DATE）</span><br><span class="line">username：用户名</span><br><span class="line">validate：是否有效（NUMBER）（默认1）</span><br><span class="line">videoIdObj：视频Pointer</span><br><span class="line">videoIdStr：视频ID</span><br><span class="line">videoLikeNum：视频点赞人数（NUMBER）</span><br><span class="line">videoUserMap：视频点赞人map对象&#123;UserId:UserId&#125;</span><br><span class="line">wxUid:微信号</span><br></pre></td></tr></table></figure></p>
-<p>Academy表<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">objectId：Class自带</span><br><span class="line">createdAt：Class自带，创建时间</span><br><span class="line">updatedAt：Class自动，更新时间</span><br><span class="line">academyName：学院名</span><br><span class="line">college：学院Pointer</span><br><span class="line">key：学院在学校的排名</span><br></pre></td></tr></table></figure></p>
-<p>用户收货地址表Address说明：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">objectId：Class自带</span><br><span class="line">createdAt：Class自带，创建时间</span><br><span class="line">updatedAt：Class自动，更新时间</span><br><span class="line">name：姓名</span><br><span class="line">flag：标志是否是默认地址（1-是默认地址，0-不是默认地址）</span><br><span class="line">city：城市</span><br><span class="line">userId：用户ID</span><br><span class="line">mobile：手机号码</span><br><span class="line">detail：详细地址</span><br></pre></td></tr></table></figure></p>
-<p>AreaGrid表<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">areaCode：地区代码（NUMBER）</span><br><span class="line">//一个区域分成400个小格子</span><br><span class="line">top：网格地区的上边界，维度（NUMBER）</span><br><span class="line">bottom：网格地区的下边界，维度（NUMBER）</span><br><span class="line">left：网格地区的左边界，经度（NUMBER）</span><br><span class="line">right：网格地区的右边界，经度（NUMBER）</span><br></pre></td></tr></table></figure></p>
-<p>拍卖商品表Auction说明：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">objectId：Class自带</span><br><span class="line">createdAt：Class自带，创建时间</span><br><span class="line">updatedAt：Class自动，更新时间</span><br><span class="line">startTime：开拍时间</span><br><span class="line">endTime: 结束时间</span><br><span class="line">title：卖品标题</span><br><span class="line">startPrice：起拍价--黑石数</span><br><span class="line">marketVal：市场价--人民币</span><br><span class="line">imgUrls：卖品图片url数组</span><br><span class="line">detail：卖品详情</span><br><span class="line">range：出价范围</span><br><span class="line">status：卖品状态（1-添加成功，2-即将开拍，3-正在开拍，4-拍卖结束）</span><br></pre></td></tr></table></figure></p>
-<p>竞拍记录表AuctionRecord说明：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">注：同一用户对同一卖品的竞拍记录，只记最新竞拍记录</span><br><span class="line"></span><br><span class="line">objectId：Class自带</span><br><span class="line">createdAt：Class自带，创建时间</span><br><span class="line">updatedAt：Class自动，更新时间</span><br><span class="line">heyzNum：竞拍黑石数</span><br><span class="line">aucId: 卖品ID</span><br><span class="line">auction: 指向卖品信息（POINTER类型）</span><br><span class="line">userId：竞拍者ID</span><br><span class="line">user：指向竞拍者信息（POINTER类型））</span><br></pre></td></tr></table></figure></p>
-<p>竞拍记录表AuctionRecordRepeat说明：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">注：所有用户的所有竞拍记录</span><br><span class="line"></span><br><span class="line">objectId：Class自带</span><br><span class="line">createdAt：Class自带，创建时间</span><br><span class="line">updatedAt：Class自动，更新时间</span><br><span class="line">heyzNum：竞拍黑石数</span><br><span class="line">aucId: 卖品ID</span><br><span class="line">auction: 指向卖品信息（POINTER类型）</span><br><span class="line">userId：竞拍者ID</span><br><span class="line">user：指向竞拍者信息（POINTER类型）</span><br><span class="line">status：竞拍状态（1-竞拍成功，2-竞拍出局）</span><br></pre></td></tr></table></figure></p>
-<p>语音聊天频道AudioChannel表<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">channelNub: 频道号</span><br><span class="line">creator: 创建者(POINTER-&gt;_User)</span><br><span class="line">creatorId: 创建者 ID</span><br><span class="line">isPrivate: 是否为私人频道</span><br><span class="line">sequence: 麦序队列(ARRAY)</span><br><span class="line">numberLimite: 最大人数上限</span><br></pre></td></tr></table></figure></p>
-<p>语音聊天室 AudioChat 表<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">channel: 语音聊天频道(POINT-&gt;AudioChannel)</span><br><span class="line">channelNub: 语音聊天频道号(STRING 方便查询)</span><br><span class="line">isAnchor: 当前用户是否为主播 (BOOLEAN)</span><br><span class="line">leaveChannelAt: 用户离开该频道的时间(DATA)</span><br><span class="line">seqNub: 该用户的麦序序号(NUMBER)</span><br><span class="line">user: 用户(POINTER-&gt;_User)</span><br><span class="line">userId: 用户 ID(STRING 方便查询)</span><br></pre></td></tr></table></figure></p>
-<p>AudioRoom </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">roomNub: 聊天室号</span><br><span class="line">title: 聊天室标题</span><br><span class="line">member: 成员(ARRAY-&gt;userId)</span><br></pre></td></tr></table></figure>
-<p>勋章Badge表</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">blackStone：黑石值（NUMBER）</span><br><span class="line">extra：额外信息（&#123;&quot;attr&quot;: &quot;second&quot;&#125;）</span><br><span class="line">logo：logo的Pointer</span><br><span class="line">logoURL：</span><br><span class="line">name：logo名称</span><br><span class="line">order：（NUMBER）</span><br><span class="line">status：（NUMBER）</span><br></pre></td></tr></table></figure>
-<p>Capsule胶囊表<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-<p>Certify认证信息表<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-<p>Checkin表<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">address</span><br><span class="line">checkinTime</span><br><span class="line">content</span><br><span class="line">createdAt</span><br><span class="line">day</span><br><span class="line">detailAddress</span><br><span class="line">location</span><br><span class="line">mapId</span><br><span class="line">objectId</span><br><span class="line">order</span><br><span class="line">updatedAt</span><br><span class="line">user</span><br></pre></td></tr></table></figure></p>
-<p>宝箱Chest说明：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">objectId：Class自带</span><br><span class="line">createdAt：Class自带，创建时间</span><br><span class="line">updatedAt：Class自动，更新时间</span><br><span class="line">heyzNum：埋宝箱所花黑石数</span><br><span class="line">msg：埋宝箱时所说的话</span><br><span class="line">openMod：宝箱开启方式（1-摇晃开启；2-加好友开启；3-互动开启；4-约会开启）</span><br><span class="line">modContent：为openMod服务，约会开启具体内容</span><br><span class="line">openSex：开启性别（1-男性开启；2-女性开启；3-不限性别；）</span><br><span class="line">range：宝箱可查看范围，默认100</span><br><span class="line">location：埋宝箱时的位置</span><br><span class="line">opener：开宝箱的人（pointer类型）</span><br><span class="line">openId：开宝箱的人（String）</span><br><span class="line">status：宝箱状态（1-埋成功；2-宝箱两天无人打开，需自动退款；3-宝箱已打开；）</span><br><span class="line">createrId：埋宝箱者（pointer类型）</span><br><span class="line">userId：埋宝箱者（String）</span><br><span class="line">expireAt：自动退款时间</span><br><span class="line">openAt：打开宝箱时间</span><br></pre></td></tr></table></figure></p>
-<p>大学College表<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-<p>Dict字典元数据表<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-<p>动态表Dynamic说明：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">objectId：Class自带</span><br><span class="line">createdAt：Class自带，创建时间</span><br><span class="line">updatedAt：Class自动，更新时间</span><br><span class="line">content：动态内容</span><br><span class="line">userId：发布动态者ID</span><br><span class="line">user：发布动态者POINTER类型</span><br><span class="line">timeStamp：发布动态时间戳</span><br><span class="line">imgs：动态所上传图片</span><br><span class="line">likeSum：动态点赞数</span><br><span class="line">likeUsers：动态点赞用户</span><br><span class="line">comments：动态评论Array，保存评论objectId</span><br></pre></td></tr></table></figure></p>
-<p>动态评论表DynamicComments说明：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">objectId：Class自带</span><br><span class="line">createdAt：Class自带，创建时间</span><br><span class="line">updatedAt：Class自动，更新时间</span><br><span class="line">dynamicId：动态ID</span><br><span class="line">ownerId：发布动态者POINTER类型</span><br><span class="line">likeUsers：动态评论点赞用户</span><br><span class="line">likeSum：动态评论点赞数</span><br><span class="line">content：动态评论内容</span><br><span class="line">timeStamp：动态评论时间戳</span><br><span class="line">parentOwnerId：父评论者POINTER类型</span><br><span class="line">parentId：父评论ID</span><br><span class="line">parentContent：父评论内容</span><br></pre></td></tr></table></figure></p>
-<p>Event表<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-<p>Explog<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-<p>Feedback<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-<p>Greet<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-<p>History<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-<p>InviteCode<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-<p>MessageBoard<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-<p>钱包表Wallet说明：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">objectId：Class自带</span><br><span class="line">createdAt：Class自带，创建时间</span><br><span class="line">updatedAt：Class自动，更新时间</span><br><span class="line">amount：钱包金额（只有充值时会累加该金额，消费不更改）</span><br><span class="line">virtual_cny：虚拟币</span><br><span class="line">heyz_num：黑石数</span><br><span class="line">userId：用户ID</span><br></pre></td></tr></table></figure></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/11/HeyzGo表设计说明/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -876,8 +345,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
