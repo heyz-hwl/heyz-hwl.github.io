@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>LeanCloud基础 | 黄威龙的笔记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="LeanCloud构建对象： 1AV.Object.extend(&apos;className&apos;) 所需的参数 className 则表示对应的表名 保存对象: 12345className.save().then(function (todo) &amp;#123;    console.log(&apo">
+  <meta name="description" content="构建对象： 1AV.Object.extend(&apos;className&apos;) 所需的参数 className 则表示对应的表名 保存对象: 12345className.save().then(function (todo) &amp;#123;    console.log(&apos;objectI">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeanCloud基础">
 <meta property="og:url" content="http://yoursite.com/2017/07/25/LeanCloud基础/index.html">
 <meta property="og:site_name" content="黄威龙的笔记">
-<meta property="og:description" content="LeanCloud构建对象： 1AV.Object.extend(&apos;className&apos;) 所需的参数 className 则表示对应的表名 保存对象: 12345className.save().then(function (todo) &amp;#123;    console.log(&apos;objectId is &apos; + todo.id);  &amp;#125;, function (error) &amp;#123">
+<meta property="og:description" content="构建对象： 1AV.Object.extend(&apos;className&apos;) 所需的参数 className 则表示对应的表名 保存对象: 12345className.save().then(function (todo) &amp;#123;    console.log(&apos;objectId is &apos; + todo.id);  &amp;#125;, function (error) &amp;#123;    cons">
 <meta property="og:locale" content="cn">
-<meta property="og:updated_time" content="2017-11-28T03:08:18.910Z">
+<meta property="og:updated_time" content="2017-11-28T03:13:08.533Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeanCloud基础">
-<meta name="twitter:description" content="LeanCloud构建对象： 1AV.Object.extend(&apos;className&apos;) 所需的参数 className 则表示对应的表名 保存对象: 12345className.save().then(function (todo) &amp;#123;    console.log(&apos;objectId is &apos; + todo.id);  &amp;#125;, function (error) &amp;#123">
+<meta name="twitter:description" content="构建对象： 1AV.Object.extend(&apos;className&apos;) 所需的参数 className 则表示对应的表名 保存对象: 12345className.save().then(function (todo) &amp;#123;    console.log(&apos;objectId is &apos; + todo.id);  &amp;#125;, function (error) &amp;#123;    cons">
   
     <link rel="alternative" href="/atom.xml" title="黄威龙的笔记" type="application/atom+xml">
   
@@ -178,7 +178,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="LeanCloud"><a href="#LeanCloud" class="headerlink" title="LeanCloud"></a>LeanCloud</h1><p>构建对象：</p>
+        <p>构建对象：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AV.Object.extend(<span class="string">'className'</span>) 所需的参数 className 则表示对应的表名</span><br></pre></td></tr></table></figure>
 <p>保存对象:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">className.save().then(<span class="function"><span class="keyword">function</span> (<span class="params">todo</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'objectId is '</span> + todo.id);</span><br><span class="line">  &#125;, <span class="function"><span class="keyword">function</span> (<span class="params">error</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.error(error);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>

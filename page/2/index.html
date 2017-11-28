@@ -176,7 +176,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><p>关于撤销：</p>
+        <p>关于撤销：</p>
 <ul>
 <li>git reset ：reset HEAD是将刚刚add到缓存区的文件取消。</li>
 <li>git checkout :checkout </li>
@@ -284,7 +284,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="LeanCloud"><a href="#LeanCloud" class="headerlink" title="LeanCloud"></a>LeanCloud</h1><p>构建对象：</p>
+        <p>构建对象：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AV.Object.extend(<span class="string">'className'</span>) 所需的参数 className 则表示对应的表名</span><br></pre></td></tr></table></figure>
 <p>保存对象:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">className.save().then(<span class="function"><span class="keyword">function</span> (<span class="params">todo</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'objectId is '</span> + todo.id);</span><br><span class="line">  &#125;, <span class="function"><span class="keyword">function</span> (<span class="params">error</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.error(error);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
