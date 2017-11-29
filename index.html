@@ -342,7 +342,7 @@
 <p>另外,/etc/profile中设定的变量(全局)的可以作用于任何用户,而~/.bashrc等中设定的变量(局部)只能继承/etc/profile中的变量,他们是”父子”关系.</p>
 <p>~/.bash_profile 是交互式、login 方式进入 bash 运行的<br>~/.bashrc 是交互式 non-login 方式进入 bash 运行的<br>通常二者设置大致相同，所以通常前者会调用后者。</p>
 <p>设置生效：可以重启生效，也可以使用命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">source </span><br><span class="line">alias php=/var/eyouim/pub/php/bin/php</span><br><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">source alias php=/var/eyouim/pub/php/bin/php</span><br><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure>
 <h2 id="2-3-用户环境配置"><a href="#2-3-用户环境配置" class="headerlink" title="2.3. 用户环境配置"></a>2.3. 用户环境配置</h2><p>为使Bash更好地为我们服务，我们需定制bash shell环境。</p>
 <h3 id="2-3-1-bash-profile、-bashrc、和-bash-logout"><a href="#2-3-1-bash-profile、-bashrc、和-bash-logout" class="headerlink" title="2.3.1. .bash_profile、.bashrc、和.bash_logout"></a>2.3.1. .bash_profile、.bashrc、和.bash_logout</h3><p>上 面这三个文件是bash shell的用户环境配置文件，位于用户的主目录下。其中.bash_profile是最重要的一个配置文件，它在用户每次登录系统时被读取，里面的所有 命令都会被bash执行。.profile(由Bourne Shell和Korn Shell使用)和.login(由C Shell使用)两个文件是.bash_profile的同义词，目的是为了兼容其它Shell。在Debian中使用.profile文件代 替.bash_profile文件。</p>
 <p>.bashrc文件会在bash shell调用另一个bash shell时读取，也就是在shell中再键入bash命令启动一个新shell时就会去读该文件。这样可有效分离登录和子shell所需的环境。但一般 来说都会在.bash_profile里调用.bashrc脚本以便统一配置用户环境。</p>
