@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="##3DES加密,需要3个显式参数 –只要参数全部相同,3DES加密结果也是相同  待加密数据 data 加密密码 key 偏移量 iv  ###看起来十分简单,但是3DES加密有其他很多种隐式参数:  mode: CryptoJS.mode.CBC padding: CryptoJS.pad.Pkcs7  mode还">
+<meta name="description" content="3DES加密,需要3个显式参数 –只要参数全部相同,3DES加密结果也是相同 待加密数据 data 加密密码 key 偏移量 iv  看起来十分简单,但是3DES加密有其他很多种隐式参数: mode: CryptoJS.mode.CBC padding: CryptoJS.pad.Pkcs7  mode还有其他的类型,">
 <meta property="og:type" content="article">
 <meta property="og:title" content="3DES 加密和 RSA 签名的 JS 实现">
 <meta property="og:url" content="http://yoursite.com/2017/11/29/关于3DES加密和RSA签名/index.html">
 <meta property="og:site_name" content="黄威龙的笔记">
-<meta property="og:description" content="##3DES加密,需要3个显式参数 –只要参数全部相同,3DES加密结果也是相同  待加密数据 data 加密密码 key 偏移量 iv  ###看起来十分简单,但是3DES加密有其他很多种隐式参数:  mode: CryptoJS.mode.CBC padding: CryptoJS.pad.Pkcs7  mode还有其他的类型,padding也是 ##RSA签名  –每次签出来的电子签名都是不">
+<meta property="og:description" content="3DES加密,需要3个显式参数 –只要参数全部相同,3DES加密结果也是相同 待加密数据 data 加密密码 key 偏移量 iv  看起来十分简单,但是3DES加密有其他很多种隐式参数: mode: CryptoJS.mode.CBC padding: CryptoJS.pad.Pkcs7  mode还有其他的类型,padding也是">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-29T08:54:48.786Z">
+<meta property="og:updated_time" content="2017-11-29T10:34:34.118Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="3DES 加密和 RSA 签名的 JS 实现">
-<meta name="twitter:description" content="##3DES加密,需要3个显式参数 –只要参数全部相同,3DES加密结果也是相同  待加密数据 data 加密密码 key 偏移量 iv  ###看起来十分简单,但是3DES加密有其他很多种隐式参数:  mode: CryptoJS.mode.CBC padding: CryptoJS.pad.Pkcs7  mode还有其他的类型,padding也是 ##RSA签名  –每次签出来的电子签名都是不">
+<meta name="twitter:description" content="3DES加密,需要3个显式参数 –只要参数全部相同,3DES加密结果也是相同 待加密数据 data 加密密码 key 偏移量 iv  看起来十分简单,但是3DES加密有其他很多种隐式参数: mode: CryptoJS.mode.CBC padding: CryptoJS.pad.Pkcs7  mode还有其他的类型,padding也是">
 
 
 
@@ -331,19 +331,17 @@
       
 
       
-        <p>##3DES加密,需要3个显式参数 –只要参数全部相同,3DES加密结果也是相同</p>
-<ul>
+        <h2 id="3DES加密-需要3个显式参数-–只要参数全部相同-3DES加密结果也是相同"><a href="#3DES加密-需要3个显式参数-–只要参数全部相同-3DES加密结果也是相同" class="headerlink" title="3DES加密,需要3个显式参数 –只要参数全部相同,3DES加密结果也是相同"></a>3DES加密,需要3个显式参数 –只要参数全部相同,3DES加密结果也是相同</h2><ul>
 <li>待加密数据 data</li>
 <li>加密密码 key</li>
 <li>偏移量 iv</li>
 </ul>
-<p>###看起来十分简单,但是3DES加密有其他很多种隐式参数:</p>
-<ul>
+<h3 id="看起来十分简单-但是3DES加密有其他很多种隐式参数"><a href="#看起来十分简单-但是3DES加密有其他很多种隐式参数" class="headerlink" title="看起来十分简单,但是3DES加密有其他很多种隐式参数:"></a>看起来十分简单,但是3DES加密有其他很多种隐式参数:</h3><ul>
 <li>mode: CryptoJS.mode.CBC</li>
 <li>padding: CryptoJS.pad.Pkcs7</li>
 </ul>
-<p>mode还有其他的类型,padding也是</p>
-<p>##RSA签名  –每次签出来的电子签名都是不一样的<br>显式参数有:</p>
+<p>mode还有其他的类型,padding也是<br><a id="more"></a></p>
+<h2 id="RSA签名-–每次签出来的电子签名都是不一样的"><a href="#RSA签名-–每次签出来的电子签名都是不一样的" class="headerlink" title="RSA签名  –每次签出来的电子签名都是不一样的"></a>RSA签名  –每次签出来的电子签名都是不一样的</h2><p>显式参数有:</p>
 <ul>
 <li>要发送的数据 data</li>
 <li>本地私钥  private_key</li>
@@ -353,8 +351,7 @@
 <li>签名格式: RSA-MD5、RSA-SHA256</li>
 <li>最后要转成什么格式: base64、utf8</li>
 </ul>
-<p>###PHP中使用的OpenSSL.sign使用的私钥是RSA原生的，而Java使用的是PKCS8格式的，这两种格式需要使用OpenSSL客户端转一下，node.js使用的和PHP一样</p>
-<p>这个项目非常小,写下来一个脚本不到100行,却写了我非常的久,原因我分析了一下:</p>
+<h3 id="PHP中使用的OpenSSL-sign使用的私钥是RSA原生的，而Java使用的是PKCS8格式的，这两种格式需要使用OpenSSL客户端转一下，node-js使用的和PHP一样"><a href="#PHP中使用的OpenSSL-sign使用的私钥是RSA原生的，而Java使用的是PKCS8格式的，这两种格式需要使用OpenSSL客户端转一下，node-js使用的和PHP一样" class="headerlink" title="PHP中使用的OpenSSL.sign使用的私钥是RSA原生的，而Java使用的是PKCS8格式的，这两种格式需要使用OpenSSL客户端转一下，node.js使用的和PHP一样"></a>PHP中使用的OpenSSL.sign使用的私钥是RSA原生的，而Java使用的是PKCS8格式的，这两种格式需要使用OpenSSL客户端转一下，node.js使用的和PHP一样</h3><p>这个项目非常小,写下来一个脚本不到100行,却写了我非常的久,原因我分析了一下:</p>
 <ol>
 <li>放假回来,水平的确下降了非常多,很多都忘了</li>
 <li>前期appKey出了点错误,让整个项目停滞了很多天</li>
@@ -453,8 +450,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -511,6 +517,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#3DES加密-需要3个显式参数-–只要参数全部相同-3DES加密结果也是相同"><span class="nav-number">1.</span> <span class="nav-text">3DES加密,需要3个显式参数 –只要参数全部相同,3DES加密结果也是相同</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#看起来十分简单-但是3DES加密有其他很多种隐式参数"><span class="nav-number">1.1.</span> <span class="nav-text">看起来十分简单,但是3DES加密有其他很多种隐式参数:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RSA签名-–每次签出来的电子签名都是不一样的"><span class="nav-number">2.</span> <span class="nav-text">RSA签名  –每次签出来的电子签名都是不一样的</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PHP中使用的OpenSSL-sign使用的私钥是RSA原生的，而Java使用的是PKCS8格式的，这两种格式需要使用OpenSSL客户端转一下，node-js使用的和PHP一样"><span class="nav-number">2.1.</span> <span class="nav-text">PHP中使用的OpenSSL.sign使用的私钥是RSA原生的，而Java使用的是PKCS8格式的，这两种格式需要使用OpenSSL客户端转一下，node.js使用的和PHP一样</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

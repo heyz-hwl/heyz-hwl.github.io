@@ -84,12 +84,12 @@
 <meta property="og:title" content="JS 异步编程解决方案">
 <meta property="og:url" content="http://yoursite.com/2017/11/29/异步编程解决/index.html">
 <meta property="og:site_name" content="黄威龙的笔记">
-<meta property="og:description" content="首先是使用Promise。Promise是为了能更好的管理回调函数。1234567const func = (val) =&amp;gt; &amp;#123;  return new Promise ((resolve, reject) =&amp;gt; &amp;#123;    doSomething()    resolve(data)//成功    reject(data)//失败  &amp;#125;)&amp;#125; 这里">
+<meta property="og:description" content="首先是使用Promise。Promise是为了能更好的管理回调函数。1234567const func = (val) =&amp;gt; &amp;#123;  return new Promise ((resolve, reject) =&amp;gt; &amp;#123;    doSomething()    resolve(data)//成功    reject(data)//失败  &amp;#125;)&amp;#125;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-29T08:49:13.470Z">
+<meta property="og:updated_time" content="2017-11-29T10:29:24.900Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS 异步编程解决方案">
-<meta name="twitter:description" content="首先是使用Promise。Promise是为了能更好的管理回调函数。1234567const func = (val) =&amp;gt; &amp;#123;  return new Promise ((resolve, reject) =&amp;gt; &amp;#123;    doSomething()    resolve(data)//成功    reject(data)//失败  &amp;#125;)&amp;#125; 这里">
+<meta name="twitter:description" content="首先是使用Promise。Promise是为了能更好的管理回调函数。1234567const func = (val) =&amp;gt; &amp;#123;  return new Promise ((resolve, reject) =&amp;gt; &amp;#123;    doSomething()    resolve(data)//成功    reject(data)//失败  &amp;#125;)&amp;#125;">
 
 
 
@@ -332,6 +332,7 @@
 
       
         <h3 id="首先是使用Promise。Promise是为了能更好的管理回调函数。"><a href="#首先是使用Promise。Promise是为了能更好的管理回调函数。" class="headerlink" title="首先是使用Promise。Promise是为了能更好的管理回调函数。"></a>首先是使用Promise。Promise是为了能更好的管理回调函数。</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> func = <span class="function">(<span class="params">val</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span> (<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    doSomething()</span><br><span class="line">    resolve(data)<span class="comment">//成功</span></span><br><span class="line">    reject(data)<span class="comment">//失败</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <p>这里的resolve和reject的data是返回给.then(data)中的data，意思就和return数据给下一个函数作为参数一样。完成链式调用。比如</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">func(val).then(<span class="function"><span class="params">dat</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">//这里的dat就是resolve来的data</span></span><br><span class="line">&#125;).catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(err)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//而reject的错误一般是用.catch()捕获然后再处理，也可以在catch里继续reject(err)给后面.catch(err)来处理。</span></span><br></pre></td></tr></table></figure>
 <p><strong>不要在循环内部直接做异步操作，否则根本拿不到数据，循环就结束了</strong><br>如果一定要做循环可以使用async.each或者使用Promise.all()</p>

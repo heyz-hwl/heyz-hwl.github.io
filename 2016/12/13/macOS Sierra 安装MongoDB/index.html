@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="使用brew安装 brew install mongodb这个时候终端就会开始下载和安装mongodb  下载完以后,需要创建一个目录,为mongo默认的数据写入目录1sudomkdir -p /data/db 然后给该目录可读可写的权限1sudo chown `id -u` /data/db 这个时候可以修改目录,也">
+<meta name="description" content="使用brew安装 brew install mongodb这个时候终端就会开始下载和安装mongodb">
 <meta property="og:type" content="article">
 <meta property="og:title" content="macOS Sierra 安装MongoDB">
 <meta property="og:url" content="http://yoursite.com/2016/12/13/macOS Sierra 安装MongoDB/index.html">
 <meta property="og:site_name" content="黄威龙的笔记">
-<meta property="og:description" content="使用brew安装 brew install mongodb这个时候终端就会开始下载和安装mongodb  下载完以后,需要创建一个目录,为mongo默认的数据写入目录1sudomkdir -p /data/db 然后给该目录可读可写的权限1sudo chown `id -u` /data/db 这个时候可以修改目录,也可以不修改,修改的话是这样123// /data/db 目录是mongo的默认目">
+<meta property="og:description" content="使用brew安装 brew install mongodb这个时候终端就会开始下载和安装mongodb">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-29T03:20:16.363Z">
+<meta property="og:updated_time" content="2017-11-29T10:24:03.810Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="macOS Sierra 安装MongoDB">
-<meta name="twitter:description" content="使用brew安装 brew install mongodb这个时候终端就会开始下载和安装mongodb  下载完以后,需要创建一个目录,为mongo默认的数据写入目录1sudomkdir -p /data/db 然后给该目录可读可写的权限1sudo chown `id -u` /data/db 这个时候可以修改目录,也可以不修改,修改的话是这样123// /data/db 目录是mongo的默认目">
+<meta name="twitter:description" content="使用brew安装 brew install mongodb这个时候终端就会开始下载和安装mongodb">
 
 
 
@@ -332,9 +332,9 @@
 
       
         <h2 id="使用brew安装"><a href="#使用brew安装" class="headerlink" title="使用brew安装"></a>使用brew安装</h2><blockquote>
-<p>brew install mongodb<br>这个时候终端就会开始下载和安装mongodb</p>
-</blockquote>
-<h3 id="下载完以后-需要创建一个目录-为mongo默认的数据写入目录"><a href="#下载完以后-需要创建一个目录-为mongo默认的数据写入目录" class="headerlink" title="下载完以后,需要创建一个目录,为mongo默认的数据写入目录"></a>下载完以后,需要创建一个目录,为mongo默认的数据写入目录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudomkdir -p /data/db</span><br></pre></td></tr></table></figure>
+<p>brew install mongodb<br>这个时候终端就会开始下载和安装mongodb<br><a id="more"></a></p>
+<h3 id="下载完以后-需要创建一个目录-为mongo默认的数据写入目录"><a href="#下载完以后-需要创建一个目录-为mongo默认的数据写入目录" class="headerlink" title="下载完以后,需要创建一个目录,为mongo默认的数据写入目录"></a>下载完以后,需要创建一个目录,为mongo默认的数据写入目录</h3></blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudomkdir -p /data/db</span><br></pre></td></tr></table></figure>
 <h3 id="然后给该目录可读可写的权限"><a href="#然后给该目录可读可写的权限" class="headerlink" title="然后给该目录可读可写的权限"></a>然后给该目录可读可写的权限</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chown `id -u` /data/db</span><br></pre></td></tr></table></figure>
 <h3 id="这个时候可以修改目录-也可以不修改-修改的话是这样"><a href="#这个时候可以修改目录-也可以不修改-修改的话是这样" class="headerlink" title="这个时候可以修改目录,也可以不修改,修改的话是这样"></a>这个时候可以修改目录,也可以不修改,修改的话是这样</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// /data/db 目录是mongo的默认目录，如果你想使用其他目录，可以使 --dbpath 参数</span><br><span class="line">mongo --dbpath dir_name</span><br><span class="line">// dir_name 为你的目录名字</span><br></pre></td></tr></table></figure>
 <h3 id="这时候就可以mongod启动mongodb了"><a href="#这时候就可以mongod启动mongodb了" class="headerlink" title="这时候就可以mongod启动mongodb了"></a>这时候就可以<code>mongod</code>启动mongodb了</h3><h2 id="如果有一天你发现你的数据库突然启动不了了，可能是你为正常关闭导致的，你可以删除掉mongod-lock文件，然后重新启动，如果还是不可以，你可以查看一下进程，然后杀掉："><a href="#如果有一天你发现你的数据库突然启动不了了，可能是你为正常关闭导致的，你可以删除掉mongod-lock文件，然后重新启动，如果还是不可以，你可以查看一下进程，然后杀掉：" class="headerlink" title="如果有一天你发现你的数据库突然启动不了了，可能是你为正常关闭导致的，你可以删除掉mongod.lock文件，然后重新启动，如果还是不可以，你可以查看一下进程，然后杀掉："></a>如果有一天你发现你的数据库突然启动不了了，可能是你为正常关闭导致的，你可以删除掉mongod.lock文件，然后重新启动，如果还是不可以，你可以查看一下进程，然后杀掉：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -aef | grep mongo</span><br></pre></td></tr></table></figure>

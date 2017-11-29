@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="黄威龙的笔记">
 <meta property="og:description" content="mongoose是什么?mongoose就是操作mongoDB的一个库,或者说是一套操作的接口 mongoose由3大部分组成 scheme 一种以文件形式存储的数据库模型骨架，不具备数据库的操作能力  model 由Schema发布生成的模型，具有抽象属性和行为的数据库操作对  entity 由Model创建的实体，他的操作也会影响数据库 整体上的关系大概是这样:Schema、Model、Ent">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-28T03:41:30.114Z">
+<meta property="og:updated_time" content="2017-11-29T10:24:43.555Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mongoose初学入门">
 <meta name="twitter:description" content="mongoose是什么?mongoose就是操作mongoDB的一个库,或者说是一套操作的接口 mongoose由3大部分组成 scheme 一种以文件形式存储的数据库模型骨架，不具备数据库的操作能力  model 由Schema发布生成的模型，具有抽象属性和行为的数据库操作对  entity 由Model创建的实体，他的操作也会影响数据库 整体上的关系大概是这样:Schema、Model、Ent">
@@ -342,6 +342,7 @@
 <li><p>entity</p>
 <p>由Model创建的实体，他的操作也会影响数据库</p>
 <p><strong>整体上的关系大概是这样:Schema、Model、Entity的关系请牢记，Schema生成Model，Model创造Entity，Model和Entity都可对数据库操作造成影响，但Model比Entity更具操作性。</strong></p>
+<a id="more"></a>
 </li>
 </ul>
 <h2 id="scheme"><a href="#scheme" class="headerlink" title="scheme"></a>scheme</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">exports.get = function( req, res)&#123;</span><br><span class="line">    Subjects.get(req.body.accountId, function( err, subjects)&#123;</span><br><span class="line">        if(err)&#123;</span><br><span class="line">            return response.error(res, logger, err);</span><br><span class="line">        &#125;</span><br><span class="line">        res.send(_.get(subjects, &apos;data&apos;));</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>

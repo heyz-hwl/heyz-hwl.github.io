@@ -331,122 +331,19 @@
 
       
         
-          
-            <ul>
+          <ul>
 <li>/etc/profile:此文件为系统的每个用户设置环境信息,当用户第一次登录时,该文件被执行.并从/etc/profile.d目录的配置文件中搜集shell的设置.</li>
 <li>/etc/bashrc:为每一个运行bash shell的用户执行此文件.当bash shell被打开时,该文件被读取.</li>
 <li>~/.bash_profile:每个用户都可使用该文件输入专用于自己使用的shell信息,当用户登录时,该文件仅仅执行一次!默认情况下,他设置一些环境变量,执行用户的.bashrc文件.</li>
 <li>~/.bashrc:该文件包含专用于你的bash shell的bash信息,当登录时以及每次打开新的shell时,该文件被读取.</li>
-<li>~/.bash_logout:当每次退出系统(退出bash shell)时,执行该文件. </li>
-</ul>
-<p>另外,/etc/profile中设定的变量(全局)的可以作用于任何用户,而~/.bashrc等中设定的变量(局部)只能继承/etc/profile中的变量,他们是”父子”关系.</p>
-<p>~/.bash_profile 是交互式、login 方式进入 bash 运行的<br>~/.bashrc 是交互式 non-login 方式进入 bash 运行的<br>通常二者设置大致相同，所以通常前者会调用后者。</p>
-<p>设置生效：可以重启生效，也可以使用命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">source alias php=/var/eyouim/pub/php/bin/php</span><br><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure>
-<h2 id="2-3-用户环境配置"><a href="#2-3-用户环境配置" class="headerlink" title="2.3. 用户环境配置"></a>2.3. 用户环境配置</h2><p>为使Bash更好地为我们服务，我们需定制bash shell环境。</p>
-<h3 id="2-3-1-bash-profile、-bashrc、和-bash-logout"><a href="#2-3-1-bash-profile、-bashrc、和-bash-logout" class="headerlink" title="2.3.1. .bash_profile、.bashrc、和.bash_logout"></a>2.3.1. .bash_profile、.bashrc、和.bash_logout</h3><p>上 面这三个文件是bash shell的用户环境配置文件，位于用户的主目录下。其中.bash_profile是最重要的一个配置文件，它在用户每次登录系统时被读取，里面的所有 命令都会被bash执行。.profile(由Bourne Shell和Korn Shell使用)和.login(由C Shell使用)两个文件是.bash_profile的同义词，目的是为了兼容其它Shell。在Debian中使用.profile文件代 替.bash_profile文件。</p>
-<p>.bashrc文件会在bash shell调用另一个bash shell时读取，也就是在shell中再键入bash命令启动一个新shell时就会去读该文件。这样可有效分离登录和子shell所需的环境。但一般 来说都会在.bash_profile里调用.bashrc脚本以便统一配置用户环境。</p>
-<p>.bash_logout在退出shell时被读取。所以我们可把一些清理工作的命令放到这文件中。</p>
-<p>在 /etc目录的bash.bashrc和profile是系统级（全局）的配置文件，当在用户主目录下找不到.bash_profile 和.bashrc\时，就会读取这两个文件。.bash_history是bash shell的历史记录文件，里面记录了你在bash shell中输入的所有命令。可通过HISSIZE环境变量设置在历史记录文件里保存记录的条数。alias l = ‘ls -l’是设置别名的语句，把它放在这些配置文档中就可使我们能用简单的’l’命令，代替’ls -l’命令。</p>
-<p><strong>当我们修改了这些配置件后，可用source .bash_profile命令使它修改内容马上生效。</strong></p>
-<h3 id="2-3-2-选项"><a href="#2-3-2-选项" class="headerlink" title="2.3.2. 选项"></a>2.3.2. 选项</h3><p>bash shell中的选项可控制shell的行为和功能，我们可以通过shopt命令来设置。使用set命令也可以，但它已被shopt替代，但为了向下兼 容，set命令还是可以使用的。使用不带参数的shopt命令可以列出当前shell中只能由shopt设置的选项，用shopt -o可列出可由set命令设置的选项。</p>
-<ul>
-<li>下面是一些可由set命令基本的选项，默认是关闭的。</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">命令</th>
-<th style="text-align:left">解释</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">emacs</td>
-<td style="text-align:left">进入emacs编辑模式</td>
-</tr>
-<tr>
-<td style="text-align:left">vi</td>
-<td style="text-align:left">进入vi编辑模式</td>
-</tr>
-<tr>
-<td style="text-align:left">ignoreeof</td>
-<td style="text-align:left">不允许单独使用Ctrl_D退出的用法，要使用exit。与IGNOREEOF=10等价</td>
-</tr>
-<tr>
-<td style="text-align:left">noclobber</td>
-<td style="text-align:left">不允许重定向覆盖已存在文件</td>
-</tr>
-<tr>
-<td style="text-align:left">noglob</td>
-<td style="text-align:left">不允许扩展文件名通配符</td>
-</tr>
-<tr>
-<td style="text-align:left">nounset</td>
-<td style="text-align:left">使用未定义的变量时给出错误</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>下面是一些只能由shopt命令设置的选项。</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">命令</th>
-<th style="text-align:left">解释</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">cdspell</td>
-<td style="text-align:left">自动改正cd命令参数中的小错误</td>
-</tr>
-<tr>
-<td style="text-align:left">hostcomplete</td>
-<td style="text-align:left">以@开头时，按tab键可进行主机名的自动完成</td>
-</tr>
-<tr>
-<td style="text-align:left">dotgblob</td>
-<td style="text-align:left">以点开始的文件名被包含在路径名扩展中</td>
-</tr>
-<tr>
-<td style="text-align:left">mailwarn</td>
-<td style="text-align:left">显示邮件警告信息</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>shopt命令的选项如下：</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">命令</th>
-<th style="text-align:left">解释</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">-p</td>
-<td style="text-align:left">显示可设置选项及当前取值</td>
-</tr>
-<tr>
-<td style="text-align:left">-s</td>
-<td style="text-align:left">设置每一选项为on</td>
-</tr>
-<tr>
-<td style="text-align:left">-u</td>
-<td style="text-align:left">设置每一选项为off</td>
-</tr>
-<tr>
-<td style="text-align:left">-q</td>
-<td style="text-align:left">不输出信息</td>
-</tr>
-</tbody>
-</table>
-
-          
+<li>~/.bash_logout:当每次退出系统(退出bash shell)时,执行该文件.
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/29/bashrc_profile和bashrc/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -512,7 +409,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/11/29/新人文档/新人文档/" itemprop="url">未命名</a></h1>
+                <a class="post-title-link" href="/2017/11/29/新人文档/新人文档/" itemprop="url">环境配置</a></h1>
         
 
         <div class="post-meta">
@@ -534,6 +431,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/TechDoc/" itemprop="url" rel="index">
+                    <span itemprop="name">TechDoc</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -563,60 +482,24 @@
 
       
         
-          
-            <h1 id="新人文档"><a href="#新人文档" class="headerlink" title="新人文档"></a>新人文档</h1><h2 id="编程环境"><a href="#编程环境" class="headerlink" title="编程环境"></a>编程环境</h2><ul>
+          <h2 id="编程环境"><a href="#编程环境" class="headerlink" title="编程环境"></a>编程环境</h2><ul>
 <li>brew</li>
 <li>nvm</li>
 <li>node</li>
 <li>npm</li>
 </ul>
 <ol>
-<li><p>首先安装Homebrew。brew是一个通过命令行安装各种软件的程序。</p>
+<li>首先安装Homebrew。brew是一个通过命令行安装各种软件的程序。</li>
+</ol>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>设置 brew 中科大源<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">替换brew.git:</span><br><span class="line">cd &quot;$(brew --repo)&quot;</span><br><span class="line">git remote set-url origin https://mirrors.ustc.edu.cn/brew.git</span><br><span class="line"></span><br><span class="line">替换homebrew-core.git:</span><br><span class="line">cd &quot;$(brew --repo)/Library/Taps/homebrew/homebrew-core&quot;</span><br><span class="line">git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-core.git</span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<p>brew install **   安装软件</p>
-<p>brew list           列出已安装的软件</p>
-<p>brew update     更新brew</p>
-<p>brew home       用浏览器打开brew的官方网站</p>
-<p>brew info          显示软件信息</p>
-<p>brew deps        显示包依赖</p>
-</blockquote>
-<ol>
-<li>后端Node.js安装，推荐使用NVM（node version management）安装</li>
-</ol>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install nvm</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>重启终端，命令行下即可使用nvm，使用<code>nvm install &lt;versions&gt;</code>进行对应的node版本安装。使用<code>nvm use</code>使用， 再通过<code>nvm alias default</code>确保有默认版本。最后使用<code>nvm ls</code>查看。</p>
-</blockquote>
-<ol>
-<li>使用npm安装各种包工具</li>
-</ol>
-<blockquote>
-<p>npm install  等等</p>
-</blockquote>
-<h2 id="GIT-使用"><a href="#GIT-使用" class="headerlink" title="GIT 使用"></a>GIT 使用</h2><p>使用brew安装git</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install git</span><br></pre></td></tr></table></figure>
-<p>公司使用github管理项目代码，而且github还不止能管理代码，还可以在github上提issue，然后assign给团队里的人，github绑定了以后还可以接收到邮件，当然可以筛选掉，在<code>github-&gt;setting-&gt;Notifications</code><a href="https://github.com/settings/notifications" target="_blank" rel="noopener">链接</a>里。</p>
-<p>这里还要了解一下git workflow，而具体的任务应该是hot-fix还是release又或者是feature，这要具体任务具体分析。</p>
-<p>git流程：找到指定的分支，然后创建一个新feature或者hot-fix的分支，如果在代码完成之前，之前的分支已经发生改变，就需要执行<code>git rebase</code>,把原分支的更改同步到当前分支.之后再提Pull Requests,让leader做code review,通过以后就可以做merge.</p>
-<p><strong>由于开启了二步验证，github无法再通过HTTPS协议clone项目，只能通过SSH clone。具体如何添加SSH<a href="https://help.github.com/articles/connecting-to-github-with-ssh/" target="_blank" rel="noopener">戳这里</a></strong></p>
-<h2 id="Waffle-io任务安排"><a href="#Waffle-io任务安排" class="headerlink" title="Waffle.io任务安排"></a>Waffle.io任务安排</h2><p>一个使用 kanban workflow 的平台。需要找leader或者相关的人把你拉入你的小组，之后你就可以在主界面里看到整个小组的所有任务以及任务的进度。你也可以选择只看assign自己的任务，并且在完成一个进度的时候拖动任务板块到它正处于的进度，方便小组其他成员了解进度。</p>
-<h3 id="正规的流程："><a href="#正规的流程：" class="headerlink" title="正规的流程："></a>正规的流程：</h3><ol>
-<li>在planning的时候收到任务</li>
-<li>PM或者PM助理会在github上把任务assign给你，你可以在waffle上看到，然后自己安排优先级。</li>
-<li>之后就是自己的编码，按照gitworkflow，自己创建分支。</li>
-<li>在编码完成后，先找leader code review，完成以后提交一个Pull requests，等待CI测试通过。</li>
-<li>如果测试通过，就提交merge request，不通过当然就是继续测试代码。</li>
-<li>在这个过程中也要在waffle上相应的拖动任务板块</li>
-</ol>
-<h2 id="Slack-公司团队交流"><a href="#Slack-公司团队交流" class="headerlink" title="Slack 公司团队交流"></a>Slack 公司团队交流</h2><p>slack简单的说就是一个企业级别的通讯社交工具，有<a href="https://slack.com/" target="_blank" rel="noopener">网页版</a>也有mac的客户端(App store)。在入职的时候IT会帮你申请好账号，之后可以找leader把你拉入自己的部门小组。你可以在搜索栏里找到公司每一个人，并且通过slack直接发消息给他，不过slack大家用的都还不是很习惯，所以不一定能保证百分百准时收到消息，如果事情紧急还是直接现场找人讨论。</p>
-<h2 id="Gmail-日历的使用"><a href="#Gmail-日历的使用" class="headerlink" title="Gmail 日历的使用"></a>Gmail 日历的使用</h2><p>公司的企业邮箱是gmail，所以可以使用Google家的各种软件服务。例如公司就是用Google日历安排会议，最好在自己本地的邮箱或者日历软件里添加公司的@btcc邮箱，这样下次团队要开会什么的，也会第一时间接收到通知。</p>
-<h2 id="二步验证"><a href="#二步验证" class="headerlink" title="二步验证"></a>二步验证</h2><p>出于安全的角度，公司采用手机App二步验证。就是在账号密码确认之后，再输入一个每分钟都会自动更新的6位数字密码。这个二步验证在github，Gmail，slack上都要开启，iOS平台推荐使用Authy这个软件（App store），这个软件可以在Widget栏里直接看到密码，而且可以一键复制，再配合PIN同步黏贴栏，就可以直接在电脑在黏贴6位密码。</p>
-
-          
+<p>设置 brew 中科大源<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/29/新人文档/新人文档/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -755,22 +638,20 @@
 
       
         
-          
-            <h1 id="hover"><a href="#hover" class="headerlink" title="hover"></a>hover</h1><ul>
+          <h1 id="hover"><a href="#hover" class="headerlink" title="hover"></a>hover</h1><ul>
 <li>&amp;:hover 鼠标移上效果</li>
 </ul>
 <h1 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h1><ul>
 <li>margin是div向外延伸的</li>
 <li>border是div的边框</li>
-<li>padding是div向内延伸</li>
-</ul>
-<h1 id="盒子模型参数顺序"><a href="#盒子模型参数顺序" class="headerlink" title="盒子模型参数顺序"></a>盒子模型参数顺序</h1><h2 id="4种可能的情况，举例说明："><a href="#4种可能的情况，举例说明：" class="headerlink" title="4种可能的情况，举例说明："></a>4种可能的情况，举例说明：</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">padding</span><span class="selector-pseudo">:10px</span>;                              四个内边距都是10<span class="selector-tag">px</span></span><br><span class="line"><span class="selector-tag">padding</span><span class="selector-pseudo">:5px</span> 10<span class="selector-tag">px</span>;   　                     上下5<span class="selector-tag">px</span>　左右10<span class="selector-tag">px</span></span><br><span class="line"><span class="selector-tag">padding</span><span class="selector-pseudo">:5px</span> 10<span class="selector-tag">px</span> 15<span class="selector-tag">px</span>;                     上5<span class="selector-tag">px</span>　右10<span class="selector-tag">px</span>　下15<span class="selector-tag">px</span>   左因为缺省与右相等，则为10<span class="selector-tag">px</span></span><br><span class="line"><span class="selector-tag">padding</span><span class="selector-pseudo">:5px</span> 10<span class="selector-tag">px</span> 15<span class="selector-tag">px</span> 20<span class="selector-tag">px</span>;                上5<span class="selector-tag">px</span>　右10<span class="selector-tag">px</span>　下15<span class="selector-tag">px</span> 　左20<span class="selector-tag">px</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>box-shadow 加阴影（x轴，y轴，阴影宽度，rgba颜色（0，0，0，0））</li>
-<li>float: right向右浮动</li>
-</ul>
-
-          
+<li><p>padding是div向内延伸</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/29/CSS/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -909,18 +790,15 @@
 
       
         
-          
-            <p>关于选择器:<br><a href="http://www.w3school.com.cn/jquery/jquery_ref_selectors.asp" target="_blank" rel="noopener">W3CJQuery 选择器表</a></p>
+          <p>关于选择器:<br><a href="http://www.w3school.com.cn/jquery/jquery_ref_selectors.asp" target="_blank" rel="noopener">W3CJQuery 选择器表</a></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="keyword">this</span>).hide() - 隐藏当前元素</span><br><span class="line">$(<span class="string">"p"</span>).hide() - 隐藏所有段落                              <span class="comment">//element</span></span><br><span class="line">$(<span class="string">".test"</span>).hide() - 隐藏所有 <span class="class"><span class="keyword">class</span></span>=<span class="string">"test"</span> 的所有元素      <span class="comment">//class</span></span><br><span class="line">$(<span class="string">"#test"</span>).hide() - 隐藏所有 id=<span class="string">"test"</span> 的元素             <span class="comment">//id</span></span><br></pre></td></tr></table></figure>
-<p>事件:<br><a href="http://www.w3school.com.cn/jquery/jquery_ref_events.asp" target="_blank" rel="noopener">W3CJQuery 事件表</a></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>)	将函数绑定到文档的就绪事件（当文档完成加载时）</span></span><br><span class="line"><span class="function"><span class="title">$</span>(<span class="params">selector</span>).<span class="title">click</span>(<span class="params">function</span>)	触发或将函数绑定到被选元素的点击事件</span></span><br><span class="line"><span class="function"><span class="title">$</span>(<span class="params">selector</span>).<span class="title">dblclick</span>(<span class="params">function</span>)	触发或将函数绑定到被选元素的双击事件</span></span><br><span class="line"><span class="function"><span class="title">$</span>(<span class="params">selector</span>).<span class="title">focus</span>(<span class="params">function</span>)	触发或将函数绑定到被选元素的获得焦点事件</span></span><br><span class="line"><span class="function"><span class="title">$</span>(<span class="params">selector</span>).<span class="title">mouseover</span>(<span class="params">function</span>)	触发或将函数绑定到被选元素的鼠标悬停事件</span></span><br></pre></td></tr></table></figure>
-<p>效果:<br><a href="http://www.w3school.com.cn/jquery/jquery_ref_effects.asp" target="_blank" rel="noopener">W3CJQuery 效果表</a><br>JQuery 中这种动画效果很多都可以设置速度参数, <strong>callback 是动画效果完成以后调用的</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(selector).hide(speed,callback);</span><br><span class="line">$(selector).show(speed,callback);</span><br><span class="line">$(selector).toggle(speed,callback);<span class="comment">//切换 hide 和 show</span></span><br></pre></td></tr></table></figure>
-<h3 id="在-JQuery-的动画特效中要注意"><a href="#在-JQuery-的动画特效中要注意" class="headerlink" title="在 JQuery 的动画特效中要注意:"></a>在 JQuery 的动画特效中要注意:</h3><blockquote>
-<p>默认地，所有 HTML 元素都有一个静态位置，且无法移动。<br>如需对位置进行操作，要记得首先把元素的 CSS position 属性设置为 relative、fixed 或 absolute！</p>
-</blockquote>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/29/JQuery学习笔记 10-11/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1060,23 +938,19 @@
       
         
           
-            <h2 id="一：分页需求："><a href="#一：分页需求：" class="headerlink" title="一：分页需求："></a>一：分页需求：</h2><p>客户端通过传递start(页码)，limit(每页显示的条数)两个参数去分页查询数据库表中的数据，那我们知道mysql数据库提供了分页的函数limit m,n，但是该函数的用法和我们的需求不一样，所以就需要我们根据实际情况去改写适合我们自己的分页语句，具体的分析如下：<br>比如：<br>查询第1条到第10条的数据的sql是：<code>select * from table limit 0,10;</code></p>
-<blockquote>
-<p>对应我们的需求就是查询第一页的数据：select <em> from table limit (1-1)</em>10,10;</p>
-</blockquote>
-<p>查询第10条到第20条的数据的sql是：<code>select * from table limit 10,20;</code></p>
-<blockquote>
-<p>对应我们的需求就是查询第二页的数据：select <em> from table limit (2-1)</em>10,10;</p>
-</blockquote>
-<p>查询第20条到第30条的数据的sql是：<code>select * from table limit 20,30;</code></p>
-<blockquote>
-<p>对应我们的需求就是查询第三页的数据：select <em> from table limit (3-1)</em>10,10;</p>
-</blockquote>
-<h2 id="二：通过上面的分析，可以得出符合我们自己需求的分页sql格式是："><a href="#二：通过上面的分析，可以得出符合我们自己需求的分页sql格式是：" class="headerlink" title="二：通过上面的分析，可以得出符合我们自己需求的分页sql格式是："></a>二：通过上面的分析，可以得出符合我们自己需求的分页sql格式是：</h2><blockquote>
-<p>select <em> from table limit (start-1)</em>limit,limit; 其中start是页码，limit是每页显示的条数。</p>
-</blockquote>
+          一：分页需求：客户端通过传递start(页码)，limit(每页显示的条数)两个参数去分页查询数据库表中的数据，那我们知道mysql数据库提供了分页的函数limit m,n，但是该函数的用法和我们的需求不一样，所以就需要我们根据实际情况去改写适合我们自己的分页语句，具体的分析如下：比如：查询第1条到第10条的数据的sql是：select * from table limit 0,10;
 
-          
+对应我们的需求就是查询第一页的数据：select  from table limit (1-1)10,10;
+
+查询第10条到第20条的数据的sql是：select * from table limit 10
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/29/MySQL分页/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1215,41 +1089,16 @@
 
       
         
-          
-            <p>MySQL断线重连</p>
+          <p>MySQL断线重连</p>
 <p>分别模拟3种错误</p>
-<p>登陆密码错误<br>数据库宕机<br>数据库连接超时<br>新增文件：app-reconnect.js</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">~ vi app-reconnect.js</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> mysql = <span class="built_in">require</span>(<span class="string">'mysql'</span>);</span><br><span class="line"><span class="keyword">var</span> conn;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">handleError</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    conn = mysql.createConnection(&#123;</span><br><span class="line">        host: <span class="string">'localhost'</span>,</span><br><span class="line">        user: <span class="string">'nodejs'</span>,</span><br><span class="line">        password: <span class="string">'nodejs'</span>,</span><br><span class="line">        database: <span class="string">'nodejs'</span>,</span><br><span class="line">        port: <span class="number">3306</span></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//连接错误，2秒重试</span></span><br><span class="line">    conn.connect(<span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (err) &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'error when connecting to db:'</span>, err);</span><br><span class="line">            setTimeout(handleError , <span class="number">2000</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    conn.on(<span class="string">'error'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'db error'</span>, err);</span><br><span class="line">        <span class="comment">// 如果是连接断开，自动重新连接</span></span><br><span class="line">        <span class="keyword">if</span> (err.code === <span class="string">'PROTOCOL_CONNECTION_LOST'</span>) &#123;</span><br><span class="line">            handleError();</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">throw</span> err;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line">handleError();</span><br></pre></td></tr></table></figure>
-<h2 id="a-模拟密码错误"><a href="#a-模拟密码错误" class="headerlink" title="a. 模拟密码错误"></a>a. 模拟密码错误</h2><p>修改password: ‘nodejs11’</p>
-<p>控制台输出。</p>
-<blockquote>
-<p>D:\workspace\javascript\nodejs-node-mysql&gt;node app-reconnect.js<br>error when connecting to db: { [Error: ER_ACCESS_DENIED_ERROR: Access denied for user ‘nodejs’@’localhost’ (using pass<br>rd: YES)]<br>  code: ‘ER_ACCESS_DENIED_ERROR’,<br>  errno: 1045,<br>  sqlState: ‘28000’,<br>  fatal: true }<br>error when connecting to db: { [Error: ER_ACCESS_DENIED_ERROR: Access denied for user ‘nodejs’@’localhost’ (using pass<br>rd: YES)]<br>  code: ‘ER_ACCESS_DENIED_ERROR’,<br>  errno: 1045,<br>  sqlState: ‘28000’,<br>  fatal: true }<br>b. 模拟数据库宕机<br>正常启动node，然后杀掉mysqld的进程。</p>
-</blockquote>
-<p>控制台输出。</p>
-<blockquote>
-<p>D:\workspace\javascript\nodejs-node-mysql&gt;node app-reconnect.js<br>db error { [Error: read ECONNRESET]<br>  code: ‘ECONNRESET’,<br>  errno: ‘ECONNRESET’,<br>  syscall: ‘read’,<br>  fatal: true }</p>
-<p>Error: read ECONNRESET<br>    at errnoException (net.js:884:11)<br>    at TCP.onread (net.js:539:19)</p>
-</blockquote>
-<pre><code>这个异常，直接导致node程序被杀死！
-</code></pre><h2 id="c-模拟连接超时，PROTOCOL-CONNECTION-LOST"><a href="#c-模拟连接超时，PROTOCOL-CONNECTION-LOST" class="headerlink" title="c. 模拟连接超时，PROTOCOL_CONNECTION_LOST"></a>c. 模拟连接超时，PROTOCOL_CONNECTION_LOST</h2><p>切换到root账户, 修改MySQL的wait_timeout参数，设置为10毫秒超时。</p>
-<p>~ mysql -uroot -p<br>mysql&gt; show variables like ‘wait_timeout’;<br>+—————+——-+<br>| Variable_name | Value |<br>+—————+——-+<br>| wait_timeout  | 28800 |<br>+—————+——-+<br>1 row in set (0.00 sec)</p>
-<p>mysql&gt; set global wait_timeout=10;<br>Query OK, 0 rows affected (0.00 sec)</p>
-<p>mysql&gt; show variables like ‘wait_timeout’;<br>+—————+——-+<br>| Variable_name | Value |<br>+—————+——-+<br>| wait_timeout  | 10    |<br>+—————+——-+<br>1 row in set (0.00 sec)<br>修改文件：app-reconnection.js，在最后增加代码</p>
-<p>~ vi app-reconnection.js</p>
-<p>function query(){<br>    console.log(new Date());<br>    var sql = “show variables like ‘wait_timeout’”;<br>    conn.query(sql, function (err, res) {<br>        console.log(res);<br>    });<br>}</p>
-<p>query();<br>setInterval(query, 15*1000);<br>程序会每融15秒，做一次查询。</p>
-<h2 id="控制台输出"><a href="#控制台输出" class="headerlink" title="控制台输出"></a>控制台输出</h2><blockquote>
-<p>D:\workspace\javascript\nodejs-node-mysql&gt;node app-reconnect.js<br>Wed Sep 11 2013 15:21:14 GMT+0800 (中国标准时间)<br>[ { Variable_name: ‘wait_timeout’, Value: ‘10’ } ]<br>db error { [Error: Connection lost: The server closed the connection.] fatal: true, code: ‘PROTOCOL_CONNECTION_LOST’ }<br>Wed Sep 11 2013 15:21:28 GMT+0800 (中国标准时间)<br>[ { Variable_name: ‘wait_timeout’, Value: ‘10’ } ]<br>db error { [Error: Connection lost: The server closed the connection.] fatal: true, code: ‘PROTOCOL_CONNECTION_LOST’ }<br>Wed Sep 11 2013 15:21:43 GMT+0800 (中国标准时间)<br>[ { Variable_name: ‘wait_timeout’, Value: ‘10’ } ]<br>我们自己的程序捕获了“PROTOCOL_CONNECTION_LOST”异常，并自动的实现了数据库重连。</p>
-</blockquote>
-<h2 id="4-MySQL连接池的超时测试"><a href="#4-MySQL连接池的超时测试" class="headerlink" title="4). MySQL连接池的超时测试"></a>4). MySQL连接池的超时测试</h2><p>针对wait_timeout问题，我们再对连接做一下测试。</p>
-<p>修改app-pooling.js文件</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> mysql = <span class="built_in">require</span>(<span class="string">'mysql'</span>);</span><br><span class="line"><span class="keyword">var</span> pool = mysql.createPool(&#123;</span><br><span class="line">    host: <span class="string">'localhost'</span>,</span><br><span class="line">    user: <span class="string">'nodejs'</span>,</span><br><span class="line">    password: <span class="string">'nodejs'</span>,</span><br><span class="line">    database: <span class="string">'nodejs'</span>,</span><br><span class="line">    port: <span class="number">3306</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> selectSQL =<span class="string">"show variables like 'wait_timeout'"</span>;</span><br><span class="line"></span><br><span class="line">pool.getConnection(<span class="function"><span class="keyword">function</span> (<span class="params">err, conn</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (err) <span class="built_in">console</span>.log(<span class="string">"POOL ==&gt; "</span> + err);</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">query</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        conn.query(selectSQL, <span class="function"><span class="keyword">function</span> (<span class="params">err, res</span>) </span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="keyword">new</span> <span class="built_in">Date</span>());</span><br><span class="line">            <span class="built_in">console</span>.log(res);</span><br><span class="line">            conn.release();</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    query();</span><br><span class="line">    setInterval(query, <span class="number">5000</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>控制台输出：</p>
-<blockquote>
-<p>D:\workspace\javascript\nodejs-node-mysql&gt;node app-pooling.js<br>Wed Sep 11 2013 15:32:25 GMT+0800 (中国标准时间)<br>[ { Variable_name: ‘wait_timeout’, Value: ‘10’ } ]<br>Wed Sep 11 2013 15:32:30 GMT+0800 (中国标准时间)<br>[ { Variable_name: ‘wait_timeout’, Value: ‘10’ } ]<br>Wed Sep 11 2013 15:32:35 GMT+0800 (中国标准时间)<br>[ { Variable_name: ‘wait_timeout’, Value: ‘10’ } ]<br>连接池，已经解决了自动重连的问题了，后面我们的开发，可以尽量使用pooling的方式。</p>
-</blockquote>
-
-          
+<p>登陆密码错误<br>数据库宕机<br>数据库连接超时<br>新增文件：app-reconnect.js<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/29/MySQL连接池/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1389,17 +1238,24 @@
       
         
           
-            <ul>
-<li>__dirname: 总是返回被执行的 js 所在文件夹的绝对路径</li>
-<li>__filename: 总是返回被执行的 js 的绝对路径</li>
-<li>process.cwd(): 总是返回运行 node 命令时所在的文件夹的绝对路径</li>
-<li>./: 在 require() 中使用是跟 __dirname 的效果相同，不会因为启动脚本的目录不一样而改变，在其他情况下跟 process.cwd() 效果相同，是相对于启动脚本所在目录的路径。</li>
-</ul>
-<blockquote>
-<p>PORT=4000 node index.js  –设置环境</p>
-</blockquote>
+          
+__dirname: 总是返回被执行的 js 所在文件夹的绝对路径
+__filename: 总是返回被执行的 js 的绝对路径
+process.cwd(): 总是返回运行 node 命令时所在的文件夹的绝对路径
+./: 在 require() 中使用是跟 __dirname 的效果相同，不会因为启动脚本的目录不一样而改变，在其他情况下跟 process.cwd() 效果相同，是相对于启动脚本所在目录的路径。
+
+
+PORT=4000 node index.js  –设置环境
+
 
           
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/29/node.js路径/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1538,43 +1394,23 @@
 
       
         
-          
-            <p>##3DES加密,需要3个显式参数 –只要参数全部相同,3DES加密结果也是相同</p>
-<ul>
+          <h2 id="3DES加密-需要3个显式参数-–只要参数全部相同-3DES加密结果也是相同"><a href="#3DES加密-需要3个显式参数-–只要参数全部相同-3DES加密结果也是相同" class="headerlink" title="3DES加密,需要3个显式参数 –只要参数全部相同,3DES加密结果也是相同"></a>3DES加密,需要3个显式参数 –只要参数全部相同,3DES加密结果也是相同</h2><ul>
 <li>待加密数据 data</li>
 <li>加密密码 key</li>
 <li>偏移量 iv</li>
 </ul>
-<p>###看起来十分简单,但是3DES加密有其他很多种隐式参数:</p>
-<ul>
+<h3 id="看起来十分简单-但是3DES加密有其他很多种隐式参数"><a href="#看起来十分简单-但是3DES加密有其他很多种隐式参数" class="headerlink" title="看起来十分简单,但是3DES加密有其他很多种隐式参数:"></a>看起来十分简单,但是3DES加密有其他很多种隐式参数:</h3><ul>
 <li>mode: CryptoJS.mode.CBC</li>
 <li>padding: CryptoJS.pad.Pkcs7</li>
 </ul>
-<p>mode还有其他的类型,padding也是</p>
-<p>##RSA签名  –每次签出来的电子签名都是不一样的<br>显式参数有:</p>
-<ul>
-<li>要发送的数据 data</li>
-<li>本地私钥  private_key</li>
-</ul>
-<p>隐式参数有:</p>
-<ul>
-<li>签名格式: RSA-MD5、RSA-SHA256</li>
-<li>最后要转成什么格式: base64、utf8</li>
-</ul>
-<p>###PHP中使用的OpenSSL.sign使用的私钥是RSA原生的，而Java使用的是PKCS8格式的，这两种格式需要使用OpenSSL客户端转一下，node.js使用的和PHP一样</p>
-<p>这个项目非常小,写下来一个脚本不到100行,却写了我非常的久,原因我分析了一下:</p>
-<ol>
-<li>放假回来,水平的确下降了非常多,很多都忘了</li>
-<li>前期appKey出了点错误,让整个项目停滞了很多天</li>
-<li>运维那边太忙,没有时间来帮我配置测试环境,无故浪费很多时间</li>
-<li>和第三方交流有代沟,没有能及时的发现问题的真正所在,一直没有发现是RSA私钥的格式问题</li>
-<li>自己的集中度不够,经常写一会儿写不出来就去划水</li>
-<li>3DES加密和RSA签名之前没有接触过,甚至连签名是干嘛的都不知道,自然会出现一些现在看来很傻的行为</li>
-<li>js对这两个算法的支持不是非常友好,尤其是这两个算有很多的变形,例如3DES有很多中mode,padding,RSA需要使用buffer和base64</li>
-<li>没有非常认真的去分析问题(如果早一点配好RSA的PHP测试环境,知道自己的RSA签名代码没有问题,就可以模块化,一步步拆分出来,定位bug) –PHP产生的3DES加密后的密文拿来在node环境中跑没有出现问题,可以得出node RSA加密部分代码没有问题,但是换了数据就报55,代表可能是3DES加密有问题,或者3DES加密后的编码格式有问题,分开一步步去测试</li>
-</ol>
-
-          
+<p>mode还有其他的类型,padding也是<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/29/关于3DES加密和RSA签名/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1714,10 +1550,16 @@
       
         
           
-            <p><a href="http://www.ruanyifeng.com/blog/2014/10/event-loop.html" target="_blank" rel="noopener">阮一峰博客链接</a></p>
-<h2 id="一、为什么JavaScript是单线程？"><a href="#一、为什么JavaScript是单线程？" class="headerlink" title="一、为什么JavaScript是单线程？"></a>一、为什么JavaScript是单线程？</h2><p>JavaScript语言的一大特点就是单线程，也就是说，同一个时间只能做一件事。那么，为什么JavaScript不能有多个线程呢？这样能提高效率啊。<br>JavaScript的单线程，与它的用途有关。作为浏览器脚本语言，JavaScript的主要用途是与用户互动，以及操作DOM。这决定了它只能是单线程，否则会带来很复杂的同步问题。比如，假定JavaScript同时有两个线程，一个线程在某个DOM节点上添加内容，另一个线程删除了这个节点，这时浏览器应该以哪个线程为准？<br>所以，为了避免复杂性，从一诞生，JavaScript就是单线程，这已经成了这门语言的核心特征，将来也不会改变。<br>为了利用多核CPU的计算能力，HTML5提出Web Worker标准，允许JavaScript脚本创建多个线程，但是子线程完全受主线程控制，且不得操作DOM。所以，这个新标准并没有改变JavaScript单线程的本质。</p>
-<h2 id="二、见博客"><a href="#二、见博客" class="headerlink" title="二、见博客"></a>二、见博客</h2>
-          
+          阮一峰博客链接
+一、为什么JavaScript是单线程？JavaScript语言的一大特点就是单线程，也就是说，同一个时间只能做一件事。那么，为什么JavaScript不能有多个线程呢？这样能提高效率啊。JavaScript的单线程，与它的用途有关。作为浏览器脚本语言，JavaScript的主要用途是与用户互动，以及操作DOM。这决定了它只能是单线程，否则会带来很复杂的同步问题。比如，假定JavaScript同时有两个线程，一个线程在某个DOM节点上添加内容，另一个线程删除了这个节点，这时浏览器应该以哪个线程为准？所以，为了避免复杂性，从一诞生，JavaScript就是单线程，这已经成了这门语
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/29/为什么JavaScript是单线程/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1856,12 +1698,15 @@
 
       
         
-          
-            <h2 id="同步异步关心的是消息通信机制"><a href="#同步异步关心的是消息通信机制" class="headerlink" title="同步异步关心的是消息通信机制"></a>同步异步关心的是消息通信机制</h2><p>所谓同步，就是在发出一个<em>调用</em>时，在没有得到结果之前，该<em>调用</em>就不返回。但是一旦调用返回，就得到返回值了。<br>换句话说，就是由<em>调用者</em>主动等待这个<em>调用</em>的结果。<br>而异步则是相反，<em>调用</em>在发出之后，这个调用就直接返回了，所以没有返回结果。换句话说，当一个异步过程调用发出后，调用者不会立刻得到结果。而是在<em>调用</em>发出后，<em>被调用者</em>通过状态、通知来通知调用者，或通过回调函数处理这个调用。<br>例如：<br>你打电话问书店老板有没有《分布式系统》这本书，如果是同步通信机制，书店老板会说，你稍等，”我查一下”，然后开始查啊查，等查好了（可能是5秒，也可能是一天）告诉你结果（返回结果）。而异步通信机制，书店老板直接告诉你我查一下啊，查好了打电话给你，然后直接挂电话了（不返回结果）。然后查好了，他会主动打电话给你。在这里老板通过“回电”这种方式来回调。</p>
-<h3 id="同步异步关心的是结果的返回方式"><a href="#同步异步关心的是结果的返回方式" class="headerlink" title="同步异步关心的是结果的返回方式"></a>同步异步关心的是结果的返回方式</h3><h2 id="阻塞与非阻塞阻塞和非阻塞关注的是程序在等待调用结果（消息，返回值）时的状态"><a href="#阻塞与非阻塞阻塞和非阻塞关注的是程序在等待调用结果（消息，返回值）时的状态" class="headerlink" title="阻塞与非阻塞阻塞和非阻塞关注的是程序在等待调用结果（消息，返回值）时的状态."></a>阻塞与非阻塞阻塞和非阻塞关注的是程序在等待调用结果（消息，返回值）时的状态.</h2><p>阻塞调用是指调用结果返回之前，当前线程会被挂起。调用线程只有在得到结果之后才会返回。非阻塞调用指在不能立刻得到结果之前，该调用不会阻塞当前线程。还是上面的例子，你打电话问书店老板有没有《分布式系统》这本书，你如果是阻塞式调用，你会一直把自己“挂起”，直到得到这本书有没有的结果，如果是非阻塞式调用，你不管老板有没有告诉你，你自己先一边去玩了， 当然你也要偶尔过几分钟check一下老板有没有返回结果。</p>
-<h3 id="也就是说阻塞与非阻塞关心的是线程发出调用后的状态。挂起还是非挂起。"><a href="#也就是说阻塞与非阻塞关心的是线程发出调用后的状态。挂起还是非挂起。" class="headerlink" title="也就是说阻塞与非阻塞关心的是线程发出调用后的状态。挂起还是非挂起。"></a>也就是说阻塞与非阻塞关心的是线程发出调用后的状态。挂起还是非挂起。</h3><h2 id="在这里阻塞与非阻塞与是否同步异步无关。跟老板通过什么方式回答你结果无关。"><a href="#在这里阻塞与非阻塞与是否同步异步无关。跟老板通过什么方式回答你结果无关。" class="headerlink" title="在这里阻塞与非阻塞与是否同步异步无关。跟老板通过什么方式回答你结果无关。"></a>在这里阻塞与非阻塞与是否同步异步无关。跟老板通过什么方式回答你结果无关。</h2><h2 id="总结：同异步是强调你找他还是他完成后来告诉你，阻非阻塞强调是否挂起（你在等待的时候是否可以做其他事）"><a href="#总结：同异步是强调你找他还是他完成后来告诉你，阻非阻塞强调是否挂起（你在等待的时候是否可以做其他事）" class="headerlink" title="总结：同异步是强调你找他还是他完成后来告诉你，阻非阻塞强调是否挂起（你在等待的时候是否可以做其他事）"></a>总结：同异步是强调你找他还是他完成后来告诉你，阻非阻塞强调是否挂起（你在等待的时候是否可以做其他事）</h2><h3 id="阻塞和非阻塞，应该描述的是一种状态，同步与非同步描述的是行为方式"><a href="#阻塞和非阻塞，应该描述的是一种状态，同步与非同步描述的是行为方式" class="headerlink" title="阻塞和非阻塞，应该描述的是一种状态，同步与非同步描述的是行为方式"></a>阻塞和非阻塞，应该描述的是一种状态，同步与非同步描述的是行为方式</h3><h2 id="例子："><a href="#例子：" class="headerlink" title="例子："></a>例子：</h2><p>同步阻塞：你打电话问老板有没有某书，老板去查，在老板给你结果之前，你一直拿着电话等待老板给你结果，你此时什么也干不了。<br>同步非阻塞：你打电话过去后，在老板给你结果之前，你拿着电话等待老板给你结果，但是你拿着电话等的时候可以干一些其他事，比如嗑瓜子。<br>异步阻塞：你打电话过去后，老板去查，你挂掉电话，等待老板给你打电话通知你，这是异步，你挂了电话后还是啥也干不了，只能一直等着老板给你打电话告诉你结果，这是阻塞。<br>异步非阻塞：你打电话过去后，你就挂了电话，然后你就想干嘛干嘛去。只用时不时去看看老板给你打电话没。</p>
-
-          
+          <h2 id="同步异步关心的是消息通信机制"><a href="#同步异步关心的是消息通信机制" class="headerlink" title="同步异步关心的是消息通信机制"></a>同步异步关心的是消息通信机制</h2><p>所谓同步，就是在发出一个<em>调用</em>时，在没有得到结果之前，该<em>调用</em>就不返回。但是一旦调用返回，就得到返回值了。<br>换句话说，就是由<em>调用者</em>主动等待这个<em>调用</em>的结果。<br>而异步则是相反，<em>调用</em>在发出之后，这个调用就直接返回了，所以没有返回结果。换句话说，当一个异步过程调用发出后，调用者不会立刻得到结果。而是在<em>调用</em>发出后，<em>被调用者</em>通过状态、通知来通知调用者，或通过回调函数处理这个调用。<br>例如：<br>你打电话问书店老板有没有《分布式系统》这本书，如果是同步通信机制，书店老板会说，你稍等，”我查一下”，然后开始查啊查，等查好了（可能是5秒，也可能是一天）告诉你结果（返回结果）。而异步通信机制，书店老板直接告诉你我查一下啊，查好了打电话给你，然后直接挂电话了（不返回结果）。然后查好了，他会主动打电话给你。在这里老板通过“回电”这种方式来回调。</p>
+<h3 id="同步异步关心的是结果的返回方式"><a href="#同步异步关心的是结果的返回方式" class="headerlink" title="同步异步关心的是结果的返回方式"></a>同步异步关心的是结果的返回方式</h3>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/29/同步异步 阻塞非阻塞/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>

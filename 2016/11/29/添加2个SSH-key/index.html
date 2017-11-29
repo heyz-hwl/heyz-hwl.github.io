@@ -84,12 +84,12 @@
 <meta property="og:title" content="添加2个SSH-key">
 <meta property="og:url" content="http://yoursite.com/2016/11/29/添加2个SSH-key/index.html">
 <meta property="og:site_name" content="黄威龙的笔记">
-<meta property="og:description" content="在使用生成SSH指令的时候,在第一条命令时可修改路径和文件名,没有后缀的是密匙,添加到本地的ssh-agent后缀.pub的是公匙,添加到github或者gitlab上.重点在于ssh-agent,首先打开ssh-agent ssh-agent bash  然后 ssh-add ~/.ssh/文件名                    //没有后缀的那个  最后一步,添加config文件,文件名">
+<meta property="og:description" content="在使用生成SSH指令的时候,在第一条命令时可修改路径和文件名,没有后缀的是密匙,添加到本地的ssh-agent后缀.pub的是公匙,添加到github或者gitlab上.重点在于ssh-agent,首先打开ssh-agent ssh-agent bash  然后 ssh-add ~/.ssh/文件名                    //没有后缀的那个">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-27T03:01:29.068Z">
+<meta property="og:updated_time" content="2017-11-29T10:22:39.205Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="添加2个SSH-key">
-<meta name="twitter:description" content="在使用生成SSH指令的时候,在第一条命令时可修改路径和文件名,没有后缀的是密匙,添加到本地的ssh-agent后缀.pub的是公匙,添加到github或者gitlab上.重点在于ssh-agent,首先打开ssh-agent ssh-agent bash  然后 ssh-add ~/.ssh/文件名                    //没有后缀的那个  最后一步,添加config文件,文件名">
+<meta name="twitter:description" content="在使用生成SSH指令的时候,在第一条命令时可修改路径和文件名,没有后缀的是密匙,添加到本地的ssh-agent后缀.pub的是公匙,添加到github或者gitlab上.重点在于ssh-agent,首先打开ssh-agent ssh-agent bash  然后 ssh-add ~/.ssh/文件名                    //没有后缀的那个">
 
 
 
@@ -282,6 +282,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/TechDoc/" itemprop="url" rel="index">
+                    <span itemprop="name">TechDoc</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -313,9 +335,9 @@
 <p>ssh-agent bash</p>
 </blockquote>
 <h3 id="然后"><a href="#然后" class="headerlink" title="然后"></a>然后</h3><blockquote>
-<p>ssh-add ~/.ssh/文件名                    //没有后缀的那个</p>
-</blockquote>
-<h3 id="最后一步-添加config文件-文件名就叫config"><a href="#最后一步-添加config文件-文件名就叫config" class="headerlink" title="最后一步,添加config文件,文件名就叫config"></a>最后一步,添加config文件,文件名就叫config</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># gitlab</span><br><span class="line">    Host gitlab         //测试的时候输入的地址</span><br><span class="line">        HostName gitlab.lingxi.co           //网址</span><br><span class="line">        PreferredAuthentications publickey</span><br><span class="line">        IdentityFile ~/.ssh/gitlab          //文件路径</span><br><span class="line">        User huangweilong            </span><br><span class="line"></span><br><span class="line"># github            </span><br><span class="line">    Host github</span><br><span class="line">        HostName github.com</span><br><span class="line">        PreferredAuthentications publickey</span><br><span class="line">        IdentityFile ~/.ssh/github_5077foxmail</span><br><span class="line">        User hwl5077@foxmail.com</span><br></pre></td></tr></table></figure>
+<p>ssh-add ~/.ssh/文件名                    //没有后缀的那个<br><a id="more"></a></p>
+<h3 id="最后一步-添加config文件-文件名就叫config"><a href="#最后一步-添加config文件-文件名就叫config" class="headerlink" title="最后一步,添加config文件,文件名就叫config"></a>最后一步,添加config文件,文件名就叫config</h3></blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># gitlab</span><br><span class="line">    Host gitlab         //测试的时候输入的地址</span><br><span class="line">        HostName gitlab.lingxi.co           //网址</span><br><span class="line">        PreferredAuthentications publickey</span><br><span class="line">        IdentityFile ~/.ssh/gitlab          //文件路径</span><br><span class="line">        User huangweilong            </span><br><span class="line"></span><br><span class="line"># github            </span><br><span class="line">    Host github</span><br><span class="line">        HostName github.com</span><br><span class="line">        PreferredAuthentications publickey</span><br><span class="line">        IdentityFile ~/.ssh/github_5077foxmail</span><br><span class="line">        User hwl5077@foxmail.com</span><br></pre></td></tr></table></figure>
 <h3 id="好了-测试一下通过与否-当然前提是github和gitlab上都已经绑定好了"><a href="#好了-测试一下通过与否-当然前提是github和gitlab上都已经绑定好了" class="headerlink" title="好了,测试一下通过与否,当然前提是github和gitlab上都已经绑定好了"></a>好了,测试一下通过与否,当然前提是github和gitlab上都已经绑定好了</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github            </span><br><span class="line">ssh -T git@gitlab</span><br></pre></td></tr></table></figure>
 <p>这里@后面的就是config文件里的HOST</p>
 

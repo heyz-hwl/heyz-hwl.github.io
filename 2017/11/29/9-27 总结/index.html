@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="res.json()是返回给客户端一个 json 对象,但是并不会就此停下里,需要在前面加上 return, 才会停止整个 API 或者方法. Array 对象有 unshift()和 push()方法,组合成队列,头出尾进  还有 push() 和 pop() 方法组合成栈,尾进尾出, 也可以用 unshift()和">
+<meta name="description" content="res.json()是返回给客户端一个 json 对象,但是并不会就此停下里,需要在前面加上 return, 才会停止整个 API 或者方法. Array 对象有 unshift()和 push()方法,组合成队列,头出尾进 还有 push() 和 pop() 方法组合成栈,尾进尾出, 也可以用 unshift()和 ">
 <meta property="og:type" content="article">
 <meta property="og:title" content="9-27个人总结">
 <meta property="og:url" content="http://yoursite.com/2017/11/29/9-27 总结/index.html">
 <meta property="og:site_name" content="黄威龙的笔记">
-<meta property="og:description" content="res.json()是返回给客户端一个 json 对象,但是并不会就此停下里,需要在前面加上 return, 才会停止整个 API 或者方法. Array 对象有 unshift()和 push()方法,组合成队列,头出尾进  还有 push() 和 pop() 方法组合成栈,尾进尾出, 也可以用 unshift()和 pop() 方法组合成头进尾出.是另一种队列,同理还可以有头进头出,shif">
+<meta property="og:description" content="res.json()是返回给客户端一个 json 对象,但是并不会就此停下里,需要在前面加上 return, 才会停止整个 API 或者方法. Array 对象有 unshift()和 push()方法,组合成队列,头出尾进 还有 push() 和 pop() 方法组合成栈,尾进尾出, 也可以用 unshift()和 pop() 方法组合成头进尾出.是另一种队列,同理还可以有头进头出,shift">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-29T09:11:37.909Z">
+<meta property="og:updated_time" content="2017-11-29T10:30:00.704Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="9-27个人总结">
-<meta name="twitter:description" content="res.json()是返回给客户端一个 json 对象,但是并不会就此停下里,需要在前面加上 return, 才会停止整个 API 或者方法. Array 对象有 unshift()和 push()方法,组合成队列,头出尾进  还有 push() 和 pop() 方法组合成栈,尾进尾出, 也可以用 unshift()和 pop() 方法组合成头进尾出.是另一种队列,同理还可以有头进头出,shif">
+<meta name="twitter:description" content="res.json()是返回给客户端一个 json 对象,但是并不会就此停下里,需要在前面加上 return, 才会停止整个 API 或者方法. Array 对象有 unshift()和 push()方法,组合成队列,头出尾进 还有 push() 和 pop() 方法组合成栈,尾进尾出, 也可以用 unshift()和 pop() 方法组合成头进尾出.是另一种队列,同理还可以有头进头出,shift">
 
 
 
@@ -333,14 +333,12 @@
       
         <ul>
 <li><code>res.json()</code>是返回给客户端一个 json 对象,但是并不会就此停下里,需要在前面加上 return, 才会停止整个 API 或者方法.</li>
-<li><p>Array 对象有 unshift()和 push()方法,组合成队列,头出尾进</p>
-<ul>
+<li>Array 对象有 unshift()和 push()方法,组合成队列,头出尾进<ul>
 <li>还有 push() 和 pop() 方法组合成栈,尾进尾出,</li>
-<li>也可以用 unshift()和 pop() 方法组合成头进尾出.是另一种队列,同理还可以有头进头出,shift() 和 unshift()</li>
+<li>也可以用 unshift()和 pop() 方法组合成头进尾出.是另一种队列,同理还可以有头进头出,shift() 和 unshift()<a id="more"></a></li>
 </ul>
 </li>
-<li><p>Promise 的使用: 把异步操作全部封装成 Promise, 然后使用 then() 传递参数,这样可以保证操作的先后顺序,而不会因为异步而顺序错乱.</p>
-</li>
+<li>Promise 的使用: 把异步操作全部封装成 Promise, 然后使用 then() 传递参数,这样可以保证操作的先后顺序,而不会因为异步而顺序错乱.</li>
 <li>被 reject 的参数也会传递给下一个 then 里,所以所有的错误都要被 reject 这样最后才会被 catch</li>
 <li>异步尤其要注意循环!循环往往会打乱异步操作的顺序.使用 async 库可以一定程序上去避免这个问题.async.each(arr,(item, callback)=&gt;{},(err) =&gt;{})会在循环中去异步执行,但是整个过程完成后会执行 err=&gt;()的这个方法参数,简单的说就是第一个参数是数组,第二个参数是数组的项和 callback, 第三个参数是循环执行完后执行的操作.</li>
 <li>但是 async 还是有问题,他的整个过程是异步的,如果要求返回是数组是按原数组的顺序返回, async.each() 是做不到的,也许使用 Promise.all 可以,以后可以试验一下.</li>

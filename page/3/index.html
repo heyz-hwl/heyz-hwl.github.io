@@ -331,17 +331,14 @@
 
       
         
-          
-            <h2 id="一共有5个分支"><a href="#一共有5个分支" class="headerlink" title="一共有5个分支"></a>一共有5个分支</h2><p><img src="http://p04c6djlz.bkt.clouddn.com//17-11-29/80113051.jpg" alt=""></p>
-<ul>
-<li>master:也可以叫 production 分支,一般用于发布产品.最好打上 Tag, 标注是哪个产品版本.用 X.Y.Z原则</li>
-<li>develop:用于开发的分支,一个版本的功能开发完成后,推到 master 上.<code>(git merge develop master)</code></li>
-<li>feature: 开发新功能的分支.一般是在 develop 上分出来,进行功能性开发,完成后合并到 develop 上.<code>(git merge feature develop)</code></li>
-<li>hotfix: 紧急修复分支,突然发现 master 上出现了 bug, 然后从 master 上分出来进行 debug, 完成后合并回 master.<code>(git merge hotfix master)</code></li>
-<li>release:预发布分支.当完成了很多个 feature 以后, develop 上可以分出一个 release 分支,用于发布给测试debug,完成 debug 以后再合并到 develop 和 master 上同时再打上Tag, 记住 release 版本号,然后就可以删除分支了. <strong>(记住：一旦打了Release分支之后不要从Develop分支上合并新的改动到Release分支)</strong>,可以把 release 理解为 develop 合并到 master 之前的 debug 测试分支.<code>(git merge release master)(git merge release develop)(git branch -d release)(git tag -a v0.1.0 master)</code></li>
-</ul>
-
-          
+          <h2 id="一共有5个分支"><a href="#一共有5个分支" class="headerlink" title="一共有5个分支"></a>一共有5个分支</h2><p><img src="http://p04c6djlz.bkt.clouddn.com//17-11-29/80113051.jpg" alt=""><br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/29/Git Flow/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -480,20 +477,14 @@
 
       
         
-          
-            <p><img src="http://p04c6djlz.bkt.clouddn.com//17-11-29/66585958.jpg" alt=""></p>
-<h1 id="General"><a href="#General" class="headerlink" title="General"></a>General</h1><p>$ npm install pm2 -g # Install PM2<br> $ pm2 start app.js # Start, Daemonize and auto-restart application (Node)<br> $ pm2 start <a href="http://app.py" target="_blank" rel="noopener">app.py</a> # Start, Daemonize and auto-restart application (Python)<br> $ pm2 start npm – start # Start, Daemonize and auto-restart Node application</p>
-<h1 id="Cluster-Mode-Node-js-only"><a href="#Cluster-Mode-Node-js-only" class="headerlink" title="Cluster Mode (Node.js only)"></a>Cluster Mode (Node.js only)</h1><p>$ pm2 start app.js -i 4 # Start 4 instances of application in cluster mode<br> # it will load balance network queries to each app<br> $ pm2 reload all # Zero Second Downtime Reload<br> $ pm2 scale [app-name] 10 # Scale Cluster app to 10 process</p>
-<h1 id="Process-Monitoring"><a href="#Process-Monitoring" class="headerlink" title="Process Monitoring"></a>Process Monitoring</h1><p>$ pm2 list # List all processes started with PM2<br> $ pm2 monit # Display memory and cpu usage of each app<br> $ pm2 show [app-name] # Show all information about application</p>
-<h1 id="Log-management"><a href="#Log-management" class="headerlink" title="Log management"></a>Log management</h1><p>$ pm2 logs # Display logs of all apps<br> $ pm2 logs [app-name] # Display logs for a specific app<br> $ pm2 logs –json # Logs in JSON format<br> $ pm2 flush<br> $ pm2 reloadLogs</p>
-<h1 id="Process-State-Management"><a href="#Process-State-Management" class="headerlink" title="Process State Management"></a>Process State Management</h1><p>$ pm2 start app.js –name=”api” # Start application and name it “api”<br> $ pm2 start app.js – -a 34 # Start app and pass option “-a 34” as argument<br> $ pm2 start app.js –watch # Restart application on file change<br> $ pm2 start <a href="http://script.sh" target="_blank" rel="noopener">script.sh</a> # Start bash script<br> $ pm2 start app.json # Start all applications declared in app.json<br> $ pm2 reset [app-name] # Reset all counters<br> $ pm2 stop all # Stop all apps<br> $ pm2 stop 0 # Stop process with id 0<br> $ pm2 restart all # Restart all apps<br> $ pm2 gracefulReload all # Gracefully reload all apps in cluster mode<br> $ pm2 delete all # Kill and delete all apps<br> $ pm2 delete 0 # Delete app with id 0</p>
-<h1 id="Startup-Boot-management"><a href="#Startup-Boot-management" class="headerlink" title="Startup/Boot management"></a>Startup/Boot management</h1><p>$ pm2 startup # Detect init system, generate and configure pm2 boot on startup<br> $ pm2 save # Save current process list<br> $ pm2 resurrect # Restore previously saved processes<br> $ pm2 unstartup # Disable and remove startup system</p>
-<p>$ pm2 update # Save processes, kill PM2 and restore processes<br> $ pm2 generate # Generate a sample json configuration file</p>
-<h1 id="Deployment"><a href="#Deployment" class="headerlink" title="Deployment"></a>Deployment</h1><p>$ pm2 deploy app.json prod setup # Setup “prod” remote server<br> $ pm2 deploy app.json prod # Update “prod” remote server<br> $ pm2 deploy app.json prod revert 2 # Revert “prod” remote server by 2</p>
-<h1 id="Module-system"><a href="#Module-system" class="headerlink" title="Module system"></a>Module system</h1><p>$ pm2 module:generate [name] # Generate sample module with name [name]</p>
-<p> $ pm2 install pm2-logrotate # Install module (here a log rotation system)<br> $ pm2 uninstall pm2-logrotate # Uninstall module<br> $ pm2 publish # Increment version, git push and npm publish</p>
-
-          
+          <p><img src="http://p04c6djlz.bkt.clouddn.com//17-11-29/66585958.jpg" alt=""><br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/29/PM2/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -633,10 +624,17 @@
       
         
           
-            <h2 id="在leanCloud表中的pointer数据是一个指向外键的指针，数值上等于userid之类的主键"><a href="#在leanCloud表中的pointer数据是一个指向外键的指针，数值上等于userid之类的主键" class="headerlink" title="在leanCloud表中的pointer数据是一个指向外键的指针，数值上等于userid之类的主键"></a>在leanCloud表中的pointer数据是一个指向外键的指针，数值上等于userid之类的主键</h2><p>但是如果在query中加入query.include(‘user’);那么在query.find()以后得到的数据里，leanCloud会自动帮你把外键对应的数据记录也带过来，就像表链接一样</p>
-<h2 id="在插入-Pointer-数据时需要插入的是-object-对象而不是-String"><a href="#在插入-Pointer-数据时需要插入的是-object-对象而不是-String" class="headerlink" title="在插入 Pointer 数据时需要插入的是 object 对象而不是 String,"></a>在插入 Pointer 数据时需要插入的是 object 对象而不是 String,</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = AV.createWithoutData(<span class="string">'tableName'</span>, objectId);</span><br><span class="line">anotherObj.set(<span class="string">'obj'</span>, obj);</span><br><span class="line">anotherObj.save();</span><br></pre></td></tr></table></figure>
+          在leanCloud表中的pointer数据是一个指向外键的指针，数值上等于userid之类的主键但是如果在query中加入query.include(‘user’);那么在query.find()以后得到的数据里，leanCloud会自动帮你把外键对应的数据记录也带过来，就像表链接一样
+在插入 Pointer 数据时需要插入的是 object 对象而不是 String,123let obj = AV.createWithoutData('tableName', objectId);anotherObj.set('obj', obj);anotherObj.save();
 
           
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/29/leanCloud pointer include find/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -775,11 +773,14 @@
 
       
         
-          
-            <p>redis 启动<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">./src/redis-server ./redis.conf</span><br><span class="line">./src/redis-cli</span><br><span class="line">auth heyzWebRedis2016</span><br></pre></td></tr></table></figure></p>
-<p><img src="http://p04c6djlz.bkt.clouddn.com//17-11-29/87023246.jpg" alt=""></p>
-
-          
+          <p>redis 启动<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">./src/redis-server ./redis.conf</span><br><span class="line">./src/redis-cli</span><br><span class="line">auth heyzWebRedis2016</span><br></pre></td></tr></table></figure></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/29/redis/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -918,52 +919,18 @@
 
       
         
-          
-            <ul>
+          <ul>
 <li><code>res.json()</code>是返回给客户端一个 json 对象,但是并不会就此停下里,需要在前面加上 return, 才会停止整个 API 或者方法.</li>
-<li><p>Array 对象有 unshift()和 push()方法,组合成队列,头出尾进</p>
-<ul>
+<li>Array 对象有 unshift()和 push()方法,组合成队列,头出尾进<ul>
 <li>还有 push() 和 pop() 方法组合成栈,尾进尾出,</li>
-<li>也可以用 unshift()和 pop() 方法组合成头进尾出.是另一种队列,同理还可以有头进头出,shift() 和 unshift()</li>
-</ul>
-</li>
-<li><p>Promise 的使用: 把异步操作全部封装成 Promise, 然后使用 then() 传递参数,这样可以保证操作的先后顺序,而不会因为异步而顺序错乱.</p>
-</li>
-<li>被 reject 的参数也会传递给下一个 then 里,所以所有的错误都要被 reject 这样最后才会被 catch</li>
-<li>异步尤其要注意循环!循环往往会打乱异步操作的顺序.使用 async 库可以一定程序上去避免这个问题.async.each(arr,(item, callback)=&gt;{},(err) =&gt;{})会在循环中去异步执行,但是整个过程完成后会执行 err=&gt;()的这个方法参数,简单的说就是第一个参数是数组,第二个参数是数组的项和 callback, 第三个参数是循环执行完后执行的操作.</li>
-<li>但是 async 还是有问题,他的整个过程是异步的,如果要求返回是数组是按原数组的顺序返回, async.each() 是做不到的,也许使用 Promise.all 可以,以后可以试验一下.</li>
-<li>在写代码之前先打一下草稿,把请求的数据格式和返回的数据格式和前端定下来,以免以后修改.</li>
-<li>还可以思考一下哪些操作会使用的比较频繁,比如提取用户某些信息,根据 userId 获取用户信息,根据手机号获取用户信息,通过 roomId 获取用户信息这种,尤其是代码量大的操作,像给数组返回数组,这种最好是封装成一个 Promise 的方法,以后写接口时会大量的复用</li>
-<li>甚至可以和前端定好返回是状态码–&gt; status:200||500||1001,这样的哪个代码代表什么意思,这样就不用特意用 msg 去说明情况,msg 是用来提示用户或者描述具体问题的</li>
-<li>活用 lodash,<em>.get(obj,’path’, default), </em>.isEmpty(),_.isUndefined()等等,有些方法没有结果会返回 undefined 有些则是空对象或者空数组,这些都可以减少代码的复杂性,而提高代码的可阅读性,尤其是保证代码的安全性,不会因为 undefined.get()中 can’t read the propotype of undefined 而报错,也不用单独写算法去检测对象是不是空或者 undefined 或者是不是 Array</li>
-<li>把文件封装成 module,在文件的最后一定要加<code>module.exports = router;</code>这样在其他文件里才可以获取的到,如果要 exports 的不止一个对象,需要写成对象<code>module.exports = {router:router, func : someFunction};</code>这样写的话在引入时也要写明<code>const heroMsg = require(&#39;./hok&#39;).heroMap;</code></li>
-<li>中间件是指在路由中过程中去执行的方法,<code>router.get(&#39;/audio/userRoom&#39;,jwt.verify,(req, res) =&gt; {})</code>,如果报错这个 API 就不会继续执行下去,如果没错才会继续,不需要写参数(),req 会自动被获取</li>
-<li>要理解 app.use() 到底做了什么事,两个参数分别代表什么意思.</li>
-<li>灵巧的使用 Map 数据结构, Map 是一个完完全全的键值对, object 是字符串对应值,通过.str 来调用,而 Map 更像是数组一样,通过[key]来引用,这样来获取一些非常规的键值对组合是非常有用的.</li>
-<li><p>Set 类型也可以学着使用,一种新型的数组,不过这个数组可以用</p>
-<ul>
-<li>add(value)：添加某个值，返回Set结构本身。</li>
-<li>delete(value)：删除某个值，返回一个布尔值，表示删除是否成功。</li>
-<li>has(value)：返回一个布尔值，表示该值是否为Set的成员。</li>
-<li>clear()：清除所有成员，没有返回值。</li>
-<li>最重要的一点, Set 类型成员不能有重复,所以可以用来最简单代码去重</li>
-</ul>
-</li>
-<li><p>比起第三方数据存储,用自己本地的数据存储显然要快更多.减少网络通讯时间,所以以后写后端,数据部分最好用自己服务器本地的 MySQL 或者 MongoDB, 这样怎么读写都是在本地,而不用担心查数据库的次数多了,会带来的网络通讯延迟导致的 API 性能异常差的问题,毕竟本地数据库读写比网络数据库读写快不是一点点,所以读写量大的数据必须放在服务器本地.</p>
-</li>
-<li>方法分类要做好,比如按功能模块分,比如按数据库操作分,又比如按数据库文件对象分.我觉得可以把对数据格式化,提取时间,获取随机数,数字精度处理这样所有文件的都有可能用到的方法写在一个文件里,然后把数据库操作封装到一个文件里,类似种种</li>
-<li>如果有时间的话,可以用测试先行模式,先把单元测试写好,这样每次修改代码只要跑一次单元测试就知道这次的代码修改有没有引起其他API 或者方法的错误.减少提交错误代码到 github 再提交到服务器的这种失误,这样非常浪费时间</li>
-<li>pm2真的是个好东西, pm2 start xxx 用 pm2起一个后台服务,这样即可用监控进程的内存 CPU 使用情况,又可以持久化的在后台运行,要重启服务也非常方便 pm2 restart xxx</li>
-<li>redis 是一种非常快的键值对临时数据库,也有 GUI 可以查看数据,不过要收费,如果需要快速的缓存数据,可以用 redis, 不过 redis 不知道怎么存储多个对象的数据目前只会 redis.set(‘key’,’value’)和 redis.get(‘key’, ‘value’),如果要像数据库那也分表,那要怎么做?</li>
-<li>lsof -i tcp:port //把port换成端口号<br>找到PID以后 kill PID //（进程的PID，如2044）</li>
-<li>远程 SSH 登录服务器<code>ssh root@112.74.40.136 -p 4999</code>然后回车输入密码</li>
-<li>其实部署最好是写成一个. sh 脚本,这样下次重启电脑以后也可以一键部署,或者在修改了本地代码以后一键更新部署,不过暂时不会写</li>
-<li>遇到什么不过马上用 thing3记录下来,不要打断当前的 codeing, 等代码写完以后再去处理bug 或者问题</li>
-<li>用 htop 指令监控 Linux 的资源使用情况</li>
-<li>用 find / -name 查找 Linux 中某文件的位置</li>
-</ul>
-
-          
+<li>也可以用 unshift()和 pop() 方法组合成头进尾出.是另一种队列,同理还可以有头进头出,shift() 和 unshift()
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/29/9-27 总结/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1102,34 +1069,16 @@
 
       
         
-          
-            <h3 id="一、启动"><a href="#一、启动" class="headerlink" title="一、启动"></a>一、启动</h3><p><code>cd /usr/local/nginx/sbin</code></p>
+          <h3 id="一、启动"><a href="#一、启动" class="headerlink" title="一、启动"></a>一、启动</h3><p><code>cd /usr/local/nginx/sbin</code></p>
 <p><code>./nginx</code></p>
-<h3 id="二、重启"><a href="#二、重启" class="headerlink" title="二、重启"></a>二、重启</h3><p>更改配置重启nginx</p>
-<p>kill -HUP 主进程号或进程号文件路径<br>或者<br><code>cd /usr/local/nginx/sbin</code></p>
-<p><code>./nginx -s reload</code></p>
-<p>判断配置文件是否正确</p>
-<p><code>./nginx -t -c /usr/local/nginx/conf/nginx.conf</code><br>或者</p>
-<p><code>cd  /usr/local/nginx/sbin</code><br><code>./nginx -t</code></p>
-<h3 id="三、关闭"><a href="#三、关闭" class="headerlink" title="三、关闭"></a>三、关闭</h3><p>查询nginx主进程号</p>
-<p><code>ps -ef | grep nginx</code></p>
-<p>从容停止   kill -QUIT 主进程号</p>
-<p>快速停止   kill -TERM 主进程号</p>
-<p>强制停止   kill -9 nginx</p>
-<p>若nginx.conf配置了pid文件路径，如果没有，则在logs目录下</p>
-<p>kill -信号类型 ‘/usr/local/nginx/logs/nginx.pid’</p>
-<h3 id="四、升级"><a href="#四、升级" class="headerlink" title="四、升级"></a>四、升级</h3><p>1、先用新程序替换旧程序文件</p>
-<p>2、kill -USR2 旧版程序的主进程号或者进程文件名</p>
-<p>此时旧的nginx主进程会把自己的进程文件改名为.oldbin，然后执行新版nginx，此时新旧版本同时运行</p>
-<p>3、kill -WINCH 旧版本主进程号</p>
-<p>4、不重载配置启动新/旧工作进程</p>
-<p>kill -HUP 旧/新版本主进程号</p>
-<p>从容关闭旧/新进程</p>
-<p>kill -QUIT 旧/新进程号</p>
-<p>快速关闭旧/新进程</p>
-<p>kill -TERM 旧/新进程号</p>
-
-          
+<h3 id="二、重启"><a href="#二、重启" class="headerlink" title="二、重启"></a>二、重启</h3>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/29/nginx/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1268,41 +1217,14 @@
 
       
         
-          
-            <p>##git<br>最基本的操作就是<br><code>gst -&gt;git add . -&gt;git commit -m&quot;&quot; -&gt;git push -&gt;gst</code><br>但是往往事情没有那么顺利，比如git add以后我要撤销怎么办</p>
-<h2 id="具体修改了什么代码"><a href="#具体修改了什么代码" class="headerlink" title="具体修改了什么代码"></a>具体修改了什么代码</h2><p>git diff —&gt;比较的是工作目录中当前文件和暂存区域快照之间的差异<br>git diff –staged —&gt;比较已经暂存起来的文件和上次提交时的快照之间的差异</p>
-<p>git commit -a -m “”—&gt;其中-a是add .的作用</p>
-<p>git log -p -2 —&gt;-p是展开每个版本的不同点，-2是最近2次</p>
-<h2 id="git-checkout主要有三个作用："><a href="#git-checkout主要有三个作用：" class="headerlink" title="git checkout主要有三个作用："></a>git checkout主要有三个作用：</h2><ul>
-<li>第一个就是切换分支。例如你从远程仓库clone下来所有的源代码，你git branch一下会看到你通常是在master，如果你想切换到某一个分支上呢？git checkout <branchname></branchname></li>
-<li>第二个就是放弃对某个文件的修改。例如你想放弃对某个文件Hello.cpp的修改，git checkout – <hello.cpp>//回到上个版本</hello.cpp></li>
-<li>第三个就是新建一个分支，git checkout &lt;-b&gt; <branchname>，不加-b的话只新建不切换到新的分支上，加-b新建并切换到该分支上<h2 id="git-reset主要是取消上一次的操作，具体用法有很多"><a href="#git-reset主要是取消上一次的操作，具体用法有很多" class="headerlink" title="git reset主要是取消上一次的操作，具体用法有很多:"></a>git reset主要是取消上一次的操作，具体用法有很多:</h2></branchname></li>
-<li>第一个取消merge，git reset –hard ORIG_HEAD，这样会退回到merge前的代码。</li>
-<li>第二个是将文件从stage（缓存区）中移除，git reset HEAD <filename><br>忽略某些文件</filename></li>
-<li>第三个就是取消commit，git reset HEAD~<num> &lt;-soft/-hard&gt;，取消上num次的commit .将你当前的改动从缓存区中移除，但是这些改动还留在工作目录中<code>git reset --mixed HEAD</code>  如果你想完全舍弃你没有提交的改动，你可以使用 <code>git reset --hard HEAD</code><h2 id="git-revert-撤销一个提交的同时会创建一个新的提交"><a href="#git-revert-撤销一个提交的同时会创建一个新的提交" class="headerlink" title="git revert 撤销一个提交的同时会创建一个新的提交"></a>git revert 撤销一个提交的同时会创建一个新的提交</h2>你也可以把 git revert 当作撤销已经提交的更改，而 git reset HEAD 用来撤销没有提交的更改。<br>[image:72F89E7D-B0C1-47A0-B2CC-1762EB05968A-26007-00004B3EC747D25B/BEAF033D-F9E6-4393-B4C6-0BF330F0AB4A.png]</num></li>
-</ul>
-<h2 id="远程仓库git-remote"><a href="#远程仓库git-remote" class="headerlink" title="远程仓库git remote"></a>远程仓库git remote</h2><ul>
-<li>git fetch [remote-name]：此命令会到远程仓库中拉取所有你本地仓库中还没有的数据。不像git pull 只是把当前分支的代码拉下来，而是拉整个仓库的数据。运行完成后，你就可以在本地访问该远程仓库中的所有分支，将其中某个分支合并到本地，或者只是取出某个分支，一探究竟。</li>
-<li>实际上，默认情况下 git clone 命令本质上就是自动创建了本地的 master 分支用于跟踪远程仓库中的 master 分支（假设远程仓库确实有 master 分支）。所以一般我们运行 git pull，目的都是要从原始克隆的远端仓库中抓取数据后，合并到工作目录中的当前分支。</li>
-<li>git push [origin master]：把本地缓存区的代码推送的远程仓库.</li>
-<li>查看远程仓库信息git remote show [remote-name]:除了对应的克隆地址外，它还给出了许多额外的信息。它友善地告诉你如果是在 master 分支，就可以用 git pull 命令抓取数据合并到本地。另外还列出了所有处于跟踪状态中的远端分支。<h2 id="打标签git-tag"><a href="#打标签git-tag" class="headerlink" title="打标签git tag"></a>打标签git tag</h2></li>
-<li>不含标注用 -l 含标注用- a -m后面带注释.<h2 id="查看相应标签的版本信息git-show"><a href="#查看相应标签的版本信息git-show" class="headerlink" title="查看相应标签的版本信息git show"></a>查看相应标签的版本信息git show</h2><h2 id="代码合并"><a href="#代码合并" class="headerlink" title="代码合并"></a>代码合并</h2><blockquote>
-<p>merge和 rebase 所做的事其实是一样的,都是把两个分支合并,不过rebase 是变基而 merge 是真正的合并,这对后期查看分支有一定的影响.</p>
-</blockquote>
-</li>
-</ul>
-<p>所以，在你运行 git rebase 之前，一定要问问你自己「有没有别人正在这个分支上工作？」。如果答案是肯定的，那么把你的爪子放回去，重新找到一个无害的方式（如 git revert）来提交你的更改。不然的话，你可以随心所欲地重写历史。</p>
-<p><strong>当你理解 rebase 是什么的时候，最重要的就是什么时候 不能 用 rebase。git rebase 的黄金法则便是，绝不要在公共的分支上使用它。</strong></p>
-<h2 id="忽略一些文件"><a href="#忽略一些文件" class="headerlink" title="忽略一些文件"></a>忽略一些文件</h2><p>一般我们总会有些文件无需纳入 Git 的管理，也不希望它们总出现在未跟踪文件列表。通常都是些自动生成的文件，比如日志文件，或者编译过程中创建的临时文件等。我们可以创建一个名为 .gitignore 的文件，列出要忽略的文件模式。来看一个实际的例子：</p>
-<p>我们可以创建一个名为 .gitignore 的文件，列出要忽略的文件模式。来看一个实际的例子：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ cat .gitignore</span><br><span class="line">*.[oa]</span><br><span class="line">*~</span><br><span class="line">\</span><br></pre></td></tr></table></figure></p>
-<p>第一行告诉 Git 忽略所有以 .o 或 .a 结尾的文件。一般这类对象文件和存档文件都是编译过程中出现的，我们用不着跟踪它们的版本。第二行告诉 Git 忽略所有以波浪符（~）结尾的文件，许多文本编辑软件（比如 Emacs）都用这样的文件名保存副本。此外，你可能还需要忽略 log，tmp 或者 pid 目录，以及自动生成的文档等等。要养成一开始就设置好 .gitignore 文件的习惯，以免将来误提交这类无用的文件。</p>
-<p>文件 .gitignore 的格式规范如下：</p>
-<blockquote>
-<p>所有空行或者以注释符号 ＃ 开头的行都会被 Git 忽略。<br>可以使用标准的 glob 模式匹配。<br>匹配模式最后跟反斜杠（/）说明要忽略的是目录。<br>要忽略指定模式以外的文件或目录，可以在模式前加上惊叹号（!）取反。<br>所谓的 glob 模式是指 shell 所使用的简化了的正则表达式。星号（*）匹配零个或多个任意字符；[abc] 匹配任何一个列在方括号中的字符（这个例子要么匹配一个 a，要么匹配一个 b，要么匹配一个 c）；问号（?）只匹配一个任意字符；如果在方括号中使用短划线分隔两个字符，表示所有在这两个字符范围内的都可以匹配（比如 [0-9] 表示匹配所有 0 到 9 的数字）。</p>
-</blockquote>
-<p>我们再看一个 .gitignore 文件的例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># 此为注释 – 将被 Git 忽略</span><br><span class="line"># 忽略所有 .a 结尾的文件</span><br><span class="line">*.a</span><br><span class="line"># 但 lib.a 除外</span><br><span class="line">!lib.a</span><br><span class="line"># 仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODO</span><br><span class="line">/TODO</span><br><span class="line"># 忽略 build/ 目录下的所有文件</span><br><span class="line">build/</span><br><span class="line"># 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt</span><br><span class="line">doc/*.txt</span><br><span class="line"># ignore all .txt files in the doc/ directory</span><br><span class="line">doc/**/*.txt</span><br></pre></td></tr></table></figure></p>
-
-          
+          <p>##git<br>最基本的操作就是<br><code>gst -&gt;git add . -&gt;git commit -m&quot;&quot; -&gt;git push -&gt;gst</code><br>但是往往事情没有那么顺利，比如git add以后我要撤销怎么办<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/29/git2/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1441,25 +1363,17 @@
 
       
         
-          
-            <ul>
+          <ul>
 <li>200 - 服务器成功返回网页</li>
 <li>404 - 请求的网页不存在</li>
-<li>503 - 服务不可用<br>详细分解：</li>
-</ul>
-<h3 id="1xx（临时响应）"><a href="#1xx（临时响应）" class="headerlink" title="1xx（临时响应）"></a>1xx（临时响应）</h3><p>表示临时响应并需要请求者继续执行操作的状态代码。</p>
-<p>代码 说明<br>100 （继续） 请求者应当继续提出请求。服务器返回此代码表示已收到请求的第一部分，正在等待其余部分。<br>101 （切换协议） 请求者已要求服务器切换协议，服务器已确认并准备切换。</p>
-<h3 id="2xx-（成功）"><a href="#2xx-（成功）" class="headerlink" title="2xx （成功）"></a>2xx （成功）</h3><p>表示成功处理了请求的状态代码。</p>
-<p>代码 说明<br>200 （成功） 服务器已成功处理了请求。通常，这表示服务器提供了请求的网页。<br>201 （已创建） 请求成功并且服务器创建了新的资源。<br>202 （已接受） 服务器已接受请求，但尚未处理。<br>203 （非授权信息） 服务器已成功处理了请求，但返回的信息可能来自另一来源。<br>204 （无内容） 服务器成功处理了请求，但没有返回任何内容。<br>205 （重置内容） 服务器成功处理了请求，但没有返回任何内容。<br>206 （部分内容） 服务器成功处理了部分 GET 请求。</p>
-<h3 id="3xx-（重定向）"><a href="#3xx-（重定向）" class="headerlink" title="3xx （重定向）"></a>3xx （重定向）</h3><p>表示要完成请求，需要进一步操作。 通常，这些状态代码用来重定向。</p>
-<p>代码 说明<br>300 （多种选择） 针对请求，服务器可执行多种操作。服务器可根据请求者 (user agent) 选择一项操作，或提供操作列表供请求者选择。<br>301 （永久移动） 请求的网页已永久移动到新位置。服务器返回此响应（对 GET 或 HEAD 请求的响应）时，会自动将请求者转到新位置。<br>302 （临时移动） 服务器目前从不同位置的网页响应请求，但请求者应继续使用原有位置来进行以后的请求。<br>303 （查看其他位置） 请求者应当对不同的位置使用单独的 GET 请求来检索响应时，服务器返回此代码。<br>304 （未修改） 自从上次请求后，请求的网页未修改过。服务器返回此响应时，不会返回网页内容。<br>305 （使用代理） 请求者只能使用代理访问请求的网页。如果服务器返回此响应，还表示请求者应使用代理。<br>307 （临时重定向） 服务器目前从不同位置的网页响应请求，但请求者应继续使用原有位置来进行以后的请求。</p>
-<h3 id="4xx（请求错误）"><a href="#4xx（请求错误）" class="headerlink" title="4xx（请求错误）"></a>4xx（请求错误）</h3><p>这些状态代码表示请求可能出错，妨碍了服务器的处理。</p>
-<p>代码 说明<br>400 （错误请求） 服务器不理解请求的语法。<br>401 （未授权） 请求要求身份验证。 对于需要登录的网页，服务器可能返回此响应。<br>403 （禁止） 服务器拒绝请求。<br>404 （未找到） 服务器找不到请求的网页。<br>405 （方法禁用） 禁用请求中指定的方法。<br>406 （不接受） 无法使用请求的内容特性响应请求的网页。<br>407 （需要代理授权） 此状态代码与 401（未授权）类似，但指定请求者应当授权使用代理。<br>408 （请求超时） 服务器等候请求时发生超时。<br>409 （冲突） 服务器在完成请求时发生冲突。服务器必须在响应中包含有关冲突的信息。<br>410 （已删除） 如果请求的资源已永久删除，服务器就会返回此响应。<br>411 （需要有效长度） 服务器不接受不含有效内容长度标头字段的请求。<br>412 （未满足前提条件） 服务器未满足请求者在请求中设置的其中一个前提条件。<br>413 （请求实体过大） 服务器无法处理请求，因为请求实体过大，超出服务器的处理能力。<br>414 （请求的 URI 过长） 请求的 URI（通常为网址）过长，服务器无法处理。<br>415 （不支持的媒体类型） 请求的格式不受请求页面的支持。<br>416 （请求范围不符合要求） 如果页面无法提供请求的范围，则服务器会返回此状态代码。<br>417 （未满足期望值） 服务器未满足”期望”请求标头字段的要求。</p>
-<h3 id="5xx（服务器错误）"><a href="#5xx（服务器错误）" class="headerlink" title="5xx（服务器错误）"></a>5xx（服务器错误）</h3><p>这些状态代码表示服务器在尝试处理请求时发生内部错误。 这些错误可能是服务器本身的错误，而不是请求出错。</p>
-<p>代码 说明<br>500 （服务器内部错误） 服务器遇到错误，无法完成请求。<br>501 （尚未实施） 服务器不具备完成请求的功能。例如，服务器无法识别请求方法时可能会返回此代码。<br>502 （错误网关） 服务器作为网关或代理，从上游服务器收到无效响应。<br>503 （服务不可用） 服务器目前无法使用（由于超载或停机维护）。通常，这只是暂时状态。<br>504 （网关超时） 服务器作为网关或代理，但是没有及时从上游服务器收到请求。<br>505 （HTTP 版本不受支持） 服务器不支持请求中所用的 HTTP 协议版本。</p>
-<p>HttpWatch状态码Result is<br>200 - 服务器成功返回网页，客户端请求已成功。<br>302 - 对象临时移动。服务器目前从不同位置的网页响应请求，但请求者应继续使用原有位置来进行以后的请求。<br>304 - 属于重定向。自上次请求后，请求的网页未修改过。服务器返回此响应时，不会返回网页内容。<br>401 - 未授权。请求要求身份验证。 对于需要登录的网页，服务器可能返回此响应。<br>404 - 未找到。服务器找不到请求的网页。<br>2xx - 成功。表示服务器成功地接受了客户端请求。<br>3xx - 重定向。表示要完成请求，需要进一步操作。客户端浏览器必须采取更多操作来实现请求。例如，浏览器可能不得不请求服务器上的不同的页面，或通过代理服务器重复该请求。<br>4xx - 请求错误。这些状态代码表示请求可能出错，妨碍了服务器的处理。<br>5xx - 服务器错误。表示服务器在尝试处理请求时发生内部错误。 这些错误可能是服务器本身的错误，而不是请求出错。</p>
-
-          
+<li>503 - 服务不可用<br>详细分解：
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/29/HTTP状态码/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1598,18 +1512,17 @@
 
       
         
-          
-            <p>用系统自带的yum命令来安装MySQL 5.6，下面记录一下整个安装、配置过程。</p>
+          <p>用系统自带的yum命令来安装MySQL 5.6，下面记录一下整个安装、配置过程。</p>
 <blockquote>
 <p>CentOS 6.5 默认yum只能安装mysql 5.1<br>安装前要检查机器原来是否安装过mysql，如有安装需要先进行数据备份、清理。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># yum list installed | grep mysql</span><br><span class="line"># ps -ef|grep mysql</span><br><span class="line"># service mysqld stop </span><br><span class="line"># rpm -e mysql-libs --nodeps</span><br><span class="line"># yum -y remove mysql mysql-*</span><br></pre></td></tr></table></figure></p>
-<p>注意:<br>如果不使用5.7 或者其他任何版本，只能有一个是 enabled=1的，其他的都得enabled=0。</p>
 </blockquote>
-<h2 id="安装MySQL"><a href="#安装MySQL" class="headerlink" title="安装MySQL"></a>安装MySQL</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># yum -y install mysql-server mysql</span><br></pre></td></tr></table></figure>
-<h2 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># service mysqld start</span><br></pre></td></tr></table></figure>
-<h2 id="修改root密码"><a href="#修改root密码" class="headerlink" title="修改root密码"></a>修改root密码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># mysql -u root</span><br><span class="line">mysql&gt; use mysql;</span><br><span class="line">mysql&gt; update user set password=PASSWORD(&quot;GIVE-NEW-ROOT-PASSWORD&quot;) where mysql&gt; User=&apos;root&apos;;</span><br><span class="line">mysql&gt; flush privileges;</span><br><span class="line">mysql&gt; quit</span><br></pre></td></tr></table></figure>
-<p><a href="http://www.jianshu.com/p/5a2e4e0b6eda" target="_blank" rel="noopener">原贴</a></p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/29/CentOS 6.5 安装 MySQL/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1748,29 +1661,20 @@
 
       
         
-          
-            <p>一. 首先安装 Git :</p>
+          <p>一. 首先安装 Git :</p>
 <blockquote>
 <p>sudo yum install git<br>二. 安装 NVM:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <p><strong>重启 shell 以后生效</strong><br>三.使用 NVM 安装 node, 推荐安装8.0以后的版本然后设为默认</p>
 <blockquote>
-<p>nvm install 8.8.1<br>nvm alias default 8.8.1</p>
-</blockquote>
-<p>然后安装阿里镜像<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure></p>
-<p>四.安装 MySQL</p>
-<p>用系统自带的yum命令来安装MySQL 5.6，下面记录一下整个安装、配置过程。</p>
-<blockquote>
-<p>CentOS 6.5 默认yum只能安装mysql 5.1<br>安装前要检查机器原来是否安装过mysql，如有安装需要先进行数据备份、清理。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># yum list installed | grep mysql</span><br><span class="line"># ps -ef|grep mysql</span><br><span class="line"># service mysqld stop </span><br><span class="line"># rpm -e mysql-libs --nodeps</span><br><span class="line"># yum -y remove mysql mysql-*</span><br></pre></td></tr></table></figure></p>
-<p>注意:<br>如果不使用5.7 或者其他任何版本，只能有一个是 enabled=1的，其他的都得enabled=0。</p>
-</blockquote>
-<h2 id="安装MySQL"><a href="#安装MySQL" class="headerlink" title="安装MySQL"></a>安装MySQL</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># yum -y install mysql-server mysql</span><br></pre></td></tr></table></figure>
-<h2 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># service mysqld start</span><br></pre></td></tr></table></figure>
-<h2 id="修改root密码"><a href="#修改root密码" class="headerlink" title="修改root密码"></a>修改root密码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># mysql -u root</span><br><span class="line">mysql&gt; use mysql;</span><br><span class="line">mysql&gt; update user set password=PASSWORD(&quot;GIVE-NEW-ROOT-PASSWORD&quot;) where User=&apos;root&apos;;</span><br><span class="line">mysql&gt; flush privileges;</span><br><span class="line">mysql&gt; quit</span><br></pre></td></tr></table></figure>
-<p>以后要改密码用<br><code>mysqladmin -u root -p password &quot;new password&quot;</code></p>
-<p><a href="http://www.jianshu.com/p/5a2e4e0b6eda" target="_blank" rel="noopener">原贴</a></p>
-
-          
+<p>nvm install 8.8.1<br>nvm alias default 8.8.1<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/29/CentOS 6 环境配置/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>

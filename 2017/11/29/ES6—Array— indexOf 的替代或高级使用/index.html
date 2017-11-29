@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="黄威龙的笔记">
 <meta property="og:description" content="find: 数组实例的find方法，用于找出第一个符合条件的数组成员。它的参数是一个回调函数，所有数组成员依次执行该回调函数，直到找出第一个返回值为true的成员，然后返回该成员。如果没有符合条件的成员，则返回undefined。  12[1, 4, -5, 10].find((n) =&amp;gt; n &amp;lt; 0)// -5 上面代码中，find方法的回调函数可以接受三个参数，依次为当前的值、当前">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-29T08:50:29.421Z">
+<meta property="og:updated_time" content="2017-11-29T10:35:46.217Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用 find 代替 indexOf">
 <meta name="twitter:description" content="find: 数组实例的find方法，用于找出第一个符合条件的数组成员。它的参数是一个回调函数，所有数组成员依次执行该回调函数，直到找出第一个返回值为true的成员，然后返回该成员。如果没有符合条件的成员，则返回undefined。  12[1, 4, -5, 10].find((n) =&amp;gt; n &amp;lt; 0)// -5 上面代码中，find方法的回调函数可以接受三个参数，依次为当前的值、当前">
@@ -334,9 +334,10 @@
         <h3 id="find"><a href="#find" class="headerlink" title="find:"></a>find:</h3><blockquote>
 <p>数组实例的find方法，用于找出第一个符合条件的数组成员。它的参数是一个回调函数，所有数组成员依次执行该回调函数，直到找出第一个返回值为true的成员，然后返回该成员。如果没有符合条件的成员，则返回undefined。</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[1, 4, -5, 10].find((n) =&gt; n &lt; 0)</span><br><span class="line">// -5</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>, <span class="number">4</span>, <span class="number">-5</span>, <span class="number">10</span>].find(<span class="function">(<span class="params">n</span>) =&gt;</span> n &lt; <span class="number">0</span>)</span><br><span class="line"><span class="comment">// -5</span></span><br></pre></td></tr></table></figure>
 <p>上面代码中，find方法的回调函数可以接受三个参数，依次为当前的值、当前的位置和原数组。</p>
-<h3 id="findIndexOf-返回是的-item-的-index-其他都一样"><a href="#findIndexOf-返回是的-item-的-index-其他都一样" class="headerlink" title="findIndexOf 返回是的 item 的 index, 其他都一样"></a>findIndexOf 返回是的 item 的 index, 其他都一样</h3><h3 id="include"><a href="#include" class="headerlink" title="include:"></a>include:</h3><blockquote>
+<h3 id="findIndexOf-返回是的-item-的-index-其他都一样"><a href="#findIndexOf-返回是的-item-的-index-其他都一样" class="headerlink" title="findIndexOf 返回是的 item 的 index, 其他都一样"></a>findIndexOf 返回是的 item 的 index, 其他都一样</h3><a id="more"></a>
+<h3 id="include"><a href="#include" class="headerlink" title="include:"></a>include:</h3><blockquote>
 <p>第一个参数为要查找的元素,该方法的第二个参数表示搜索的起始位置，默认为0。如果第二个参数为负数，则表示倒数的位置，如果这时它大于数组长度（比如第二个参数为-4，但数组长度为3），则会重置为从0开始。</p>
 </blockquote>
 <p><strong>indexOf方法有两个缺点，一是不够语义化，它的含义是找到参数值的第一个出现位置，所以要去比较是否不等于-1，表达起来不够直观。二是，它内部使用严格相等运算符（===）进行判断，这会导致对NaN的误判。</strong></p>

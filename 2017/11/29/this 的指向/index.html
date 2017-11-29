@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="黄威龙的笔记">
 <meta property="og:description" content="一共有4中情况:  1.纯粹的函数调用属于全局性调用，因此this就代表全局对象Global。  123456var x = 1;function test()&amp;#123;　　this.x = 0;&amp;#125;test();alert(x); //0这里是调用了 test(),把 this.x 从1改成了0,所以这个时候的 this 指向的是全局变量  2.作为对象方法的调用函数还可以作为某个对象">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-29T08:51:44.729Z">
+<meta property="og:updated_time" content="2017-11-29T10:29:00.264Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript this 的指向">
 <meta name="twitter:description" content="一共有4中情况:  1.纯粹的函数调用属于全局性调用，因此this就代表全局对象Global。  123456var x = 1;function test()&amp;#123;　　this.x = 0;&amp;#125;test();alert(x); //0这里是调用了 test(),把 this.x 从1改成了0,所以这个时候的 this 指向的是全局变量  2.作为对象方法的调用函数还可以作为某个对象">
@@ -337,11 +337,12 @@
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">　　<span class="keyword">this</span>.x = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">test();</span><br><span class="line">alert(x); <span class="comment">//0这里是调用了 test(),把 this.x 从1改成了0,所以这个时候的 this 指向的是全局变量</span></span><br></pre></td></tr></table></figure>
 <ul>
-<li>2.作为对象方法的调用<br>函数还可以作为某个对象的方法调用，这时this就指这个上级对象。</li>
-</ul>
+<li><p>2.作为对象方法的调用<br>函数还可以作为某个对象的方法调用，这时this就指这个上级对象。</p>
+<a id="more"></a>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">　　　　alert(<span class="keyword">this</span>.x);</span><br><span class="line">　　&#125;</span><br><span class="line">　　<span class="keyword">var</span> o = &#123;&#125;;</span><br><span class="line">　　o.x = <span class="number">1</span>;</span><br><span class="line">　　o.m = test;</span><br><span class="line">　　o.m(); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>3.作为构造函数调用<br>所谓构造函数，就是通过这个函数生成一个新对象（object）。这时，this就指这个新对象。</li>
+</li>
+<li><p>3.作为构造函数调用<br>所谓构造函数，就是通过这个函数生成一个新对象（object）。这时，this就指这个新对象。</p>
+</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">2</span>;</span><br><span class="line">　　<span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">　　　　<span class="keyword">this</span>.x = <span class="number">1</span>;</span><br><span class="line">　　&#125;</span><br><span class="line">　　<span class="keyword">var</span> o = <span class="keyword">new</span> test();</span><br><span class="line">　　alert(x); <span class="comment">//2</span></span><br></pre></td></tr></table></figure>
 <ul>
