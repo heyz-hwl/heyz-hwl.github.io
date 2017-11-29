@@ -341,17 +341,110 @@
 </ul>
 <p>另外,/etc/profile中设定的变量(全局)的可以作用于任何用户,而~/.bashrc等中设定的变量(局部)只能继承/etc/profile中的变量,他们是”父子”关系.</p>
 <p>~/.bash_profile 是交互式、login 方式进入 bash 运行的<br>~/.bashrc 是交互式 non-login 方式进入 bash 运行的<br>通常二者设置大致相同，所以通常前者会调用后者。</p>
-<p>设置生效：可以重启生效，也可以使用命令：source<br>alias php=/var/eyouim/pub/php/bin/php<br>source /etc/profile</p>
+<p>设置生效：可以重启生效，也可以使用命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">source </span><br><span class="line">alias php=/var/eyouim/pub/php/bin/php</span><br><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure>
 <h2 id="2-3-用户环境配置"><a href="#2-3-用户环境配置" class="headerlink" title="2.3. 用户环境配置"></a>2.3. 用户环境配置</h2><p>为使Bash更好地为我们服务，我们需定制bash shell环境。</p>
 <h3 id="2-3-1-bash-profile、-bashrc、和-bash-logout"><a href="#2-3-1-bash-profile、-bashrc、和-bash-logout" class="headerlink" title="2.3.1. .bash_profile、.bashrc、和.bash_logout"></a>2.3.1. .bash_profile、.bashrc、和.bash_logout</h3><p>上 面这三个文件是bash shell的用户环境配置文件，位于用户的主目录下。其中.bash_profile是最重要的一个配置文件，它在用户每次登录系统时被读取，里面的所有 命令都会被bash执行。.profile(由Bourne Shell和Korn Shell使用)和.login(由C Shell使用)两个文件是.bash_profile的同义词，目的是为了兼容其它Shell。在Debian中使用.profile文件代 替.bash_profile文件。</p>
 <p>.bashrc文件会在bash shell调用另一个bash shell时读取，也就是在shell中再键入bash命令启动一个新shell时就会去读该文件。这样可有效分离登录和子shell所需的环境。但一般 来说都会在.bash_profile里调用.bashrc脚本以便统一配置用户环境。</p>
 <p>.bash_logout在退出shell时被读取。所以我们可把一些清理工作的命令放到这文件中。</p>
 <p>在 /etc目录的bash.bashrc和profile是系统级（全局）的配置文件，当在用户主目录下找不到.bash_profile 和.bashrc\时，就会读取这两个文件。.bash_history是bash shell的历史记录文件，里面记录了你在bash shell中输入的所有命令。可通过HISSIZE环境变量设置在历史记录文件里保存记录的条数。alias l = ‘ls -l’是设置别名的语句，把它放在这些配置文档中就可使我们能用简单的’l’命令，代替’ls -l’命令。</p>
-<p>[Note]<br>当我们修改了这些配置件后，可用source .bash_profile命令使它修改内容马上生效。<br>2.3.2. 选项<br>bash shell中的选项可控制shell的行为和功能，我们可以通过shopt命令来设置。使用set命令也可以，但它已被shopt替代，但为了向下兼 容，set命令还是可以使用的。使用不带参数的shopt命令可以列出当前shell中只能由shopt设置的选项，用shopt -o可列出可由set命令设置的选项。</p>
-<p>下面是一些可由set命令基本的选项，默认是关闭的。</p>
-<p>emacs                  进入emacs编辑模式<br>vi                     进入vi编辑模式<br>ignoreeof              不允许单独使用Ctrl_D退出的用法，要使用exit。与IGNOREEOF=10等价<br>noclobber              不允许重定向覆盖已存在文件<br>noglob                 不允许扩展文件名通配符<br>nounset                使用未定义的变量时给出错误<br>下面是一些只能由shopt命令设置的选项。</p>
-<p>cdspell          自动改正cd命令参数中的小错误<br>hostcomplete     以@开头时，按tab键可进行主机名的自动完成<br>dotgblob         以点开始的文件名被包含在路径名扩展中<br>mailwarn         显示邮件警告信息<br>shopt命令的选项如下：</p>
-<p>-p          显示可设置选项及当前取值<br>-s          设置每一选项为on<br>-u          设置每一选项为off<br>-q          不输出信息<br>-o          </p>
+<p><strong>当我们修改了这些配置件后，可用source .bash_profile命令使它修改内容马上生效。</strong></p>
+<h3 id="2-3-2-选项"><a href="#2-3-2-选项" class="headerlink" title="2.3.2. 选项"></a>2.3.2. 选项</h3><p>bash shell中的选项可控制shell的行为和功能，我们可以通过shopt命令来设置。使用set命令也可以，但它已被shopt替代，但为了向下兼 容，set命令还是可以使用的。使用不带参数的shopt命令可以列出当前shell中只能由shopt设置的选项，用shopt -o可列出可由set命令设置的选项。</p>
+<ul>
+<li>下面是一些可由set命令基本的选项，默认是关闭的。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">emacs</td>
+<td style="text-align:left">进入emacs编辑模式</td>
+</tr>
+<tr>
+<td style="text-align:left">vi</td>
+<td style="text-align:left">进入vi编辑模式</td>
+</tr>
+<tr>
+<td style="text-align:left">ignoreeof</td>
+<td style="text-align:left">不允许单独使用Ctrl_D退出的用法，要使用exit。与IGNOREEOF=10等价</td>
+</tr>
+<tr>
+<td style="text-align:left">noclobber</td>
+<td style="text-align:left">不允许重定向覆盖已存在文件</td>
+</tr>
+<tr>
+<td style="text-align:left">noglob</td>
+<td style="text-align:left">不允许扩展文件名通配符</td>
+</tr>
+<tr>
+<td style="text-align:left">nounset</td>
+<td style="text-align:left">使用未定义的变量时给出错误</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>下面是一些只能由shopt命令设置的选项。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">cdspell</td>
+<td style="text-align:left">自动改正cd命令参数中的小错误</td>
+</tr>
+<tr>
+<td style="text-align:left">hostcomplete</td>
+<td style="text-align:left">以@开头时，按tab键可进行主机名的自动完成</td>
+</tr>
+<tr>
+<td style="text-align:left">dotgblob</td>
+<td style="text-align:left">以点开始的文件名被包含在路径名扩展中</td>
+</tr>
+<tr>
+<td style="text-align:left">mailwarn</td>
+<td style="text-align:left">显示邮件警告信息</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>shopt命令的选项如下：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">-p</td>
+<td style="text-align:left">显示可设置选项及当前取值</td>
+</tr>
+<tr>
+<td style="text-align:left">-s</td>
+<td style="text-align:left">设置每一选项为on</td>
+</tr>
+<tr>
+<td style="text-align:left">-u</td>
+<td style="text-align:left">设置每一选项为off</td>
+</tr>
+<tr>
+<td style="text-align:left">-q</td>
+<td style="text-align:left">不输出信息</td>
+</tr>
+</tbody>
+</table>
 
           
         
@@ -1867,7 +1960,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
